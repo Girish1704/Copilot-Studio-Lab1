@@ -332,7 +332,7 @@ In this task, you will validate your complete travel approval workflow by testin
 
    > **Success Validation:** You should see your travel request details posted automatically to the Teams channel, demonstrating successful end-to-end workflow automation.
 
-## Summary
+## Summary  
 
 In this exercise, you successfully created sophisticated business process automation using Agent Flows and Microsoft Teams integration. You learned how to design workflows that bridge conversational AI with real-world business processes, enabling employees to submit travel requests through natural conversation while automatically routing them to appropriate approval channels.
 
