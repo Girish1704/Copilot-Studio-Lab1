@@ -1,22 +1,19 @@
-# Exercise 2: Create Agent Flows and Business Process Automation
+# Exercise 2: Agent Flows and Multi-Agent Orchestration
 
-### Estimated Duration: 20 Minutes
+### Estimated Duration: 30 Minutes
 
 ## Overview
 
-In this exercise, you will advance your AI agent development skills by creating sophisticated Agent Flows that enable business process automation and seamless integration with Microsoft Teams. You'll learn to build end-to-end workflows that connect conversational AI with real-world business processes, specifically focusing on travel approval automation. This exercise demonstrates the power of combining conversational AI with Microsoft Power Platform capabilities to create comprehensive business solutions.
+In this exercise, you'll add business process automation to your Safe Travels agent and experience multi-agent orchestration. You'll create a simple Agent Flow for travel approvals and then add a second agent that specializes in leave management. This demonstrates how agents can work together and how businesses can automate processes using conversational AI.
 
-You'll design an Agent Flow that captures employee travel requests, automatically posts them to designated Teams channels for approval, and provides feedback to users. Additionally, you'll create custom Topics that leverage these flows, establishing the foundation for complex multi-step business processes. This practical experience showcases how AI agents can serve as intelligent interfaces to enterprise workflows and automation systems.
+This is where the magic happens - you'll see your agents come alive with real business functionality. By the end, you'll have a travel approval system that posts requests to Teams, plus a multi-agent setup where your Safe Travels agent can automatically hand off leave-related questions to a specialized Leave Manager agent.
 
 ## Objectives
 
 You will be able to complete the following tasks:
 
-- Task 1: Create a Microsoft Teams team and channel for travel approvals
-- Task 2: Design and build a Travel Approval Agent Flow with Teams integration
-- Task 3: Configure flow inputs, outputs, and Microsoft Teams connectivity
-- Task 4: Create custom Topics that leverage Agent Flows for business processes
-- Task 5: Test end-to-end travel approval workflow and validate automation
+- Task 1: Create a simple travel approval flow (15 mins)
+- Task 2: Build a Leave Manager agent and set up multi-agent orchestration (15 mins)
 
 ## Prerequisites
 
@@ -25,324 +22,220 @@ You will be able to complete the following tasks:
 - Understanding of basic workflow concepts and business process automation
 - **Safe Travels agent** available in your Copilot Studio environment
 
-## Task 1: Create Teams Infrastructure for Travel Approvals
+## Task 1: Create Simple Travel Approval Flow (15 minutes)
 
-In this task, you will establish the Microsoft Teams infrastructure required for automated travel approval workflows. This includes creating a dedicated team and channel where travel requests will be automatically posted for manager review and approval.
+In this task, you'll add a basic business process to your Safe Travels agent by creating a simple flow that can capture travel approval requests. This demonstrates how agents can trigger real business processes.
 
-1. Open **Microsoft Teams** in a new browser tab or use the desktop application, ensuring you're signed in with your tenant credentials.
+### Step 1: Quick Teams Setup (3 minutes)
 
-   ![Teams Dashboard](../media/teams-dashboard.png)
-
-1. In the left navigation pane, locate and click **See all your teams** to access team management options.
-
-   ![Teams Navigation](../media/teams-see-all-teams.png)
-
-1. Click **Create team** to start building your travel approval infrastructure.
-
-   ![Create Team Button](../media/create-team-button.png)
-
-1. In the team creation interface, configure the following details:
+1. Open **Microsoft Teams** and quickly create:
    - **Team name:** `HR Team`
-   - **First channel name:** `Travel Approval Channel`
+   - **Channel name:** `Travel Approvals`
+   - Skip adding members for this lab
 
-   ![Team Configuration](../media/team-configuration.png)
+   ![Quick Teams Setup](../media/quick-teams-setup.png)
 
-   > **Business Context:** Creating dedicated teams and channels for automated workflows ensures proper organization, security, and governance of business processes.
+   > **Quick Setup:** We're keeping this simple - just one team and channel for approval notifications.
 
-1. Click **Create** to establish your HR Team with the Travel Approval Channel.
+### Step 2: Create Basic Agent Flow (7 minutes)
 
-   ![Create Team Confirm](../media/create-team-confirm.png)
+1. In **Copilot Studio**, go to your **Safe Travels** agent and select **Flows** from the left menu.
 
-1. When prompted to add members to the HR Team, click **Skip** for this lab exercise.
+   ![Navigate to Flows](../media/navigate-flows.png)
 
-   ![Skip Add Members](../media/skip-add-members.png)
+1. Click **New agent flow** and set up:
+   - **Trigger:** "When an agent calls the flow"
+   - **Inputs:** Add two inputs:
+     - `Employee ID` (Number)
+     - `Purpose` (Text)
 
-1. Verify that your HR Team and Travel Approval Channel are successfully created and accessible.
+   ![Basic Flow Setup](../media/basic-flow-setup.png)
 
-   ![Team Created Success](../media/team-created-success.png)
+### Step 3: Add Teams Integration (5 minutes)
 
-   > **Infrastructure Ready:** Your Teams infrastructure is now prepared to receive automated travel approval requests from your Agent Flow.
+1. Add action: **Teams > Post message in a chat or channel**
+2. Configure quickly:
+   - **Team:** HR Team
+   - **Channel:** Travel Approvals  
+   - **Message:** "Travel request from Employee ID: [Employee ID], Purpose: [Purpose]"
 
-## Task 2: Create Travel Approval Agent Flow
+   ![Teams Integration](../media/teams-integration-simple.png)
 
-In this task, you will build a sophisticated Agent Flow that automates the travel approval process by capturing employee requests and posting them to your newly created Teams channel. This demonstrates advanced integration between Copilot Studio and Microsoft Power Platform.
+3. Add final action: **Respond to agent** and configure the output:
+   - Click **Add an output**
+   - **Output Type:** Select `Text`
+   - **Name:** Enter `Output`
+   - **Value:** Enter `Request submitted`
+   - **Description:** Enter `Confirmation message for travel request`
 
-1. Return to **Microsoft Copilot Studio** and navigate to your **Safe Travels** agent.
+   ![Configure Response Output](../media/configure-response-output.png)
 
-   ![Safe Travels Agent](../media/safe-travels-agent.png)
+   > **Important:** All fields must be filled to avoid "Invalid parameters" error.
 
-1. From the left navigation pane, select **Flows** to access the Agent Flow development environment.
+4. **Save draft** first, then **Publish** your flow
+5. Name it "Travel Approval Flow" in the Overview tab
 
-   ![Flows Navigation](../media/flows-navigation.png)
+   ![Flow Complete](../media/flow-complete.png)
 
-1. Click **New agent flow** to create a new automation workflow.
+### Step 4: Connect Flow to Safe Travels Agent (5 minutes)
 
-   ![New Agent Flow](../media/new-agent-flow.png)
+1. Go back to your **Safe Travels** agent and navigate to the **Overview** page.
 
-1. In the flow designer, click **Add a trigger** to define how the flow will be initiated.
-
-   ![Add Trigger](../media/add-trigger.png)
-
-1. Select **When an agent calls the flow** under the **AI capabilities** section.
-
-   ![Agent Trigger](../media/agent-trigger.png)
-
-   > **Trigger Type:** This trigger enables your conversational agent to invoke the flow based on user interactions and natural language processing.
-
-1. Configure the flow inputs by clicking **+ Add an input**.
-
-   ![Add Input](../media/add-input.png)
-
-1. Select **Number** as the input type and name it `Employee ID`.
-
-   ![Employee ID Input](../media/employee-id-input.png)
-
-1. Click **+ Add an input** again to add a second parameter.
-
-   ![Add Second Input](../media/add-second-input.png)
-
-1. Select **Text** as the input type and name it `Purpose`.
-
-   ![Purpose Input](../media/purpose-input.png)
-
-   > **Input Parameters:** These inputs will capture essential information from users during travel approval conversations.
-
-## Task 3: Configure Microsoft Teams Integration
-
-In this task, you will configure your Agent Flow to automatically post travel requests to your Teams channel, enabling seamless integration between conversational AI and collaborative workflows.
-
-1. Below the trigger node, click **Add an action** to begin building your workflow logic.
-
-   ![Add Action](../media/add-action.png)
-
-1. In the action search interface, type `Teams` and click **See more** under the Teams connector group.
-
-   ![Search Teams](../media/search-teams.png)
-
-1. Select **Post message in a chat or channel** from the available Teams actions.
-
-   ![Post Message Action](../media/post-message-action.png)
-
-1. Click **Sign in** to authenticate your Teams connection and provide necessary permissions.
-
-   ![Teams Sign In](../media/teams-sign-in.png)
-
-1. Complete the authentication process using your tenant credentials when prompted.
-
-   ![Teams Authentication](../media/teams-authentication.png)
-
-1. Configure the Teams message posting parameters:
-   - **Post as:** Select `User`
-   - **Post in:** Select `Channel`
-   - **Team:** Select `HR Team`
-   - **Channel:** Select `Travel Approval Channel`
-
-   ![Teams Configuration](../media/teams-configuration.png)
-
-1. In the **Message** field, create a formatted travel request message using the following template:
-
-   ```
-   Travel Request from 
-   Employee ID - <Employee ID>
-   Purpose - <Purpose>
-   ```
-
-   ![Message Template](../media/message-template.png)
-
-   > **Dynamic Content:** Replace `<Employee ID>` and `<Purpose>` with the corresponding dynamic content variables from your flow inputs.
-
-1. Click on the **Employee ID** dynamic content to insert it into your message template.
-
-   ![Insert Employee ID](../media/insert-employee-id.png)
-
-1. Similarly, insert the **Purpose** dynamic content variable to complete your message template.
-
-   ![Insert Purpose](../media/insert-purpose.png)
-
-1. Review your completed message configuration to ensure proper dynamic content integration.
-
-   ![Complete Message Config](../media/complete-message-config.png)
-
-## Task 4: Configure Flow Response and Publishing
-
-In this task, you will complete your Agent Flow by configuring the response that users will receive and publishing the flow for use by your conversational agent.
-
-1. Add another action after the Teams message posting by clicking **Add an action**.
-
-   ![Add Response Action](../media/add-response-action.png)
-
-1. Under the **Skills** section, select **Respond to the agent**.
-
-   ![Respond to Agent](../media/respond-to-agent.png)
-
-1. Click **Add an output** to configure what the agent will communicate back to the user.
-
-   ![Add Output](../media/add-output.png)
-
-1. Configure the output parameter:
-   - **Type:** Select `Text`
-   - **Name:** `Output`
-   - **Value:** `Request submitted`
-
-   ![Output Configuration](../media/output-configuration.png)
-
-   > **User Feedback:** This output provides confirmation to users that their travel request has been successfully submitted for approval.
-
-1. Click **Save draft** to preserve your flow configuration.
-
-   ![Save Draft](../media/save-draft.png)
-
-1. After saving, click **Publish** to make your flow available for agent integration.
-
-   ![Publish Flow](../media/publish-flow.png)
-
-1. Confirm the flow has been successfully published by checking the status indicator.
-
-   ![Flow Published](../media/flow-published.png)
-
-1. Navigate to the **Overview** tab of your Agent Flow.
-
-   ![Flow Overview](../media/flow-overview.png)
-
-1. Click **Edit** to customize the flow name and description.
-
-   ![Edit Flow Details](../media/edit-flow-details.png)
-
-1. Update the flow name to `Request Travel Approval Flow` and click **Save**.
-
-   ![Update Flow Name](../media/update-flow-name.png)
-
-   > **Flow Management:** Descriptive naming helps maintain organization and clarity in complex automation scenarios.
-
-## Task 5: Integrate Agent Flow with Safe Travels Agent
-
-In this task, you will connect your newly created Agent Flow to your Safe Travels agent, enabling users to trigger travel approval workflows through natural conversation.
-
-1. From the left navigation, select **Agents** to return to your agent management interface.
-
-   ![Agents Navigation](../media/agents-navigation.png)
-
-1. Select your **Safe Travels** agent to access its configuration.
-
-   ![Select Safe Travels](../media/select-safe-travels.png)
-
-1. On the agent's Overview page, scroll down and click **Add tool** to integrate your flow.
+2. Scroll down and click **Add tool**.
 
    ![Add Tool](../media/add-tool.png)
 
-1. In the tool selection interface, navigate to the **Flow** tab and select your **Request Travel Approval Flow**.
+3. Go to the **Flow** tab and select your **Travel Approval Flow**.
 
    ![Select Flow Tool](../media/select-flow-tool.png)
 
-1. Click **Add to agent** to complete the integration.
+4. Click **Add to agent** to integrate the flow.
 
-   ![Add Flow to Agent](../media/add-flow-to-agent.png)
+   ![Flow Added to Agent](../media/flow-added-agent.png)
 
-1. Verify that your flow appears in the **Tools** section of your agent's Overview page.
+5. Now create a topic to use this flow. Go to **Topics** and click **+ Add a topic** > **From blank**.
 
-   ![Flow Added Confirmation](../media/flow-added-confirmation.png)
+   ![Add Topic From Blank](../media/add-topic-from-blank.png)
 
-   > **Tool Integration:** Your agent can now access and execute the travel approval workflow as part of conversational interactions.
+6. Configure the topic details:
+   - **Name:** `Travel Approval Request`
+   - **Display name:** `Travel Approval Request`
 
-## Task 6: Create Custom Topic for Travel Approval
+   ![Topic Name Configuration](../media/topic-name-config.png)
 
-In this task, you will create a custom Topic that enables natural language triggering of your travel approval workflow, providing a seamless user experience for travel request submission.
+7. In the topic designer, you'll see the trigger node. Add trigger phrases like:
+   - `I need travel approval`
+   - `Travel approval request`
+   - `Request travel approval`
 
-1. From the top navigation, select **Topics** to access topic management.
+   ![Add Trigger Phrases](../media/add-trigger-phrases.png)
 
-   ![Topics Navigation](../media/topics-navigation.png)
+8. Add a **Question** node to collect Employee ID:
+   - Click **+ Add a node** > **Ask a question**
+   - **Question:** `What is your Employee ID?`
+   - **Identify:** Choose `Number`
+   - **Save response as:** `EmployeeID`
 
-1. Click **+ Add a topic** and select **Add from description with Copilot**.
+   ![Add Employee ID Question](../media/add-employee-id-question.png)
 
-   ![Add Topic with Copilot](../media/add-topic-copilot.png)
+9. Add another **Question** node to collect Purpose:
+   - Click **+ Add a node** > **Ask a question**  
+   - **Question:** `What is the purpose of your travel?`
+   - **Identify:** Choose `Text`
+   - **Save response as:** `Purpose`
 
-1. Configure your topic with the following details:
-   - **Name:** `Travel Approval`
-   - **Create a topic to:** `This topic should get the Employee ID (Number) and Purpose of travel (Text) details from the user and invoke the Tool "Request Travel Approval Flow"`
+   ![Add Purpose Question](../media/add-purpose-question.png)
 
-   ![Topic Configuration](../media/topic-configuration.png)
+10. Add the flow action:
+    - Click **+ Add a node** > **Call an action** > **Travel Approval Flow**
+    - Map the variables:
+      - **Employee ID:** Select `EmployeeID` variable
+      - **Purpose:** Select `Purpose` variable
 
-1. Click **Create** to generate your travel approval topic.
+    ![Add Flow Action](../media/add-flow-action.png)
 
-   ![Create Topic](../media/create-topic.png)
+11. Add a final message node:
+    - Click **+ Add a node** > **Send a message**
+    - **Message:** Use the flow output variable `Output`
 
-1. Review the generated topic structure and verify it includes nodes for collecting Employee ID and Purpose information.
+    ![Add Final Message](../media/add-final-message.png)
 
-   ![Topic Structure](../media/topic-structure.png)
+12. **Save** and **Publish** your agent.
 
-1. If the flow invocation node is not automatically created, add it manually by clicking **Add a node** after the purpose collection.
-
-   ![Add Flow Node](../media/add-flow-node.png)
-
-1. Select **Add a tool** and choose **Request Travel Approval Flow**.
-
-   ![Select Flow Tool in Topic](../media/select-flow-tool-topic.png)
-
-1. Map the collected variables to the flow inputs:
-   - **Employee ID** → `EmployeeID` variable
-   - **Purpose** → `Purpose` variable
-
-   ![Map Variables](../media/map-variables.png)
-
-1. Add a final message node that displays the flow output to confirm successful submission.
-
-   ![Add Confirmation Message](../media/add-confirmation-message.png)
-
-1. Click **Save** to preserve your topic configuration.
-
-   ![Save Topic](../media/save-topic.png)
-
-## Task 7: Test End-to-End Travel Approval Workflow
-
-In this task, you will validate your complete travel approval workflow by testing the integration between your conversational agent, Agent Flow, and Teams channel.
-
-1. Click **Publish** to make your updated agent with the new topic available for testing.
-
-   ![Publish Agent](../media/publish-agent.png)
-
-1. Confirm the publishing action in the dialog box.
-
-   ![Confirm Publish](../media/confirm-publish.png)
-
-1. Open the **Test** panel and initiate a travel approval conversation:
-
-   ```
-   Travel Approval
-   ```
+8. **Test it:** In the test panel, type "I need travel approval" and provide Employee ID: 1234 and Purpose: "Client meeting"
 
    ![Test Travel Approval](../media/test-travel-approval.png)
 
-1. Provide the requested information when prompted:
-   - **Employee ID:** `1234`
-   - **Purpose of travel:** `Client meeting for finalizing proposal of XYZ project`
+## Task 2: Multi-Agent Orchestration Setup (10 minutes)
 
-   ![Provide Travel Details](../media/provide-travel-details.png)
+Now for the exciting part - you'll create a second agent and see how agents can work together automatically!
 
-1. When prompted for permissions, click **Allow** to enable the flow execution.
+### Step 1: Create Leave Manager Agent (7 minutes)
 
-   ![Allow Permissions](../media/allow-permissions.png)
+1. In Copilot Studio, click **+ New agent** and select **Configure** (not template).
 
-1. Verify you receive the confirmation message "Request submitted" from the agent.
+2. Set up your Leave Manager agent:
+   - **Name:** `Leave Manager Agent`
+   - **Description:** `Helps employees check leave balances and policies`
+   - **Instructions:** `Track employee leaves and provide leave balance information`
 
-   ![Request Submitted](../media/request-submitted.png)
+   ![Leave Agent Setup](../media/leave-agent-setup.png)
 
-1. Navigate to your **Microsoft Teams** HR Team and check the Travel Approval Channel for the automated message.
+3. **Add Knowledge Source:** Click **+ Add knowledge** and upload **Leave balance Tracker.xlsx** from the lab files.
 
-   ![Teams Channel Verification](../media/teams-channel-verification.png)
+   ![Upload Leave Tracker](../media/upload-leave-tracker.png)
 
-   > **Success Validation:** You should see your travel request details posted automatically to the Teams channel, demonstrating successful end-to-end workflow automation.
+   > **File Content:** This Excel file contains employee leave balance data that will enable your agent to provide accurate, personalized leave information.
 
-## Summary  
+4. Wait for processing to complete (status shows "Ready").
 
-In this exercise, you successfully created sophisticated business process automation using Agent Flows and Microsoft Teams integration. You learned how to design workflows that bridge conversational AI with real-world business processes, enabling employees to submit travel requests through natural conversation while automatically routing them to appropriate approval channels.
+5. Create a topic called "Leave Balance Checker":
+   - **Name:** `Leave Balance Checker`
+   - **Description:** `Get Employee ID and check leave balance from tracker`
+   
+   ![Leave Topic Setup](../media/leave-topic-setup.png)
 
-Key accomplishments include:
-- ✅ Created Teams infrastructure for travel approval workflows
-- ✅ Built comprehensive Agent Flow with dynamic inputs and Teams integration
-- ✅ Configured automated message posting to designated Teams channels
-- ✅ Created custom Topics that trigger complex business processes
-- ✅ Validated end-to-end workflow automation and user experience
+6. **Save** and **Publish** the Leave Manager agent.
 
-Your travel approval automation system now demonstrates how AI agents can serve as intelligent interfaces to enterprise business processes, reducing manual overhead while maintaining proper approval workflows. The skills you've developed in this exercise provide the foundation for implementing multi-agent orchestration scenarios in the next exercise.
+   ![Leave Agent Published](../media/leave-agent-published.png)
 
-### You have successfully completed this exercise. Click **Next >>** to continue to Exercise 3.
+### Step 2: Connect Agents (Multi-Agent Magic!) (3 minutes)
+
+1. Go back to your **Safe Travels** agent.
+
+2. Navigate to **Agents** tab and click **+ Add**.
+
+   ![Add Agent Integration](../media/add-agent-integration.png)
+
+3. Select **Copilot Studio** and choose your **Leave Manager Agent**.
+
+4. Click **Add agent** to connect them.
+
+   ![Agent Connected](../media/agent-connected.png)
+
+5. **Publish** your updated Safe Travels agent.
+
+### Step 3: Test Multi-Agent Magic! (2 minutes)
+
+1. In your Safe Travels agent test panel, try:
+   ```
+   Check my leave balance
+   ```
+
+2. Watch as your Safe Travels agent automatically hands off the request to the Leave Manager agent!
+
+3. When prompted, enter Employee ID: `1234`
+
+4. See how the Leave Manager responds through the Safe Travels interface - this is multi-agent orchestration in action!
+
+   ![Multi-Agent Success](../media/multi-agent-success.png)
+
+   > **🎉 Amazing!** You now have two agents working together - one handles travel, the other handles leave, but users only need to talk to one interface!
+
+## Summary
+
+🚀 **Incredible work!** In just 30 minutes, you've built something truly impressive:
+
+### What You've Accomplished:
+- ✅ Created a travel approval flow that posts to Teams automatically
+- ✅ Built a specialized Leave Manager agent from scratch  
+- ✅ Implemented multi-agent orchestration - agents working together!
+- ✅ Experienced the future of enterprise AI automation
+
+### The Magic You've Created:
+Your employees can now talk to **one agent** (Safe Travels) and get help with:
+- **Travel questions** → Handled directly by Safe Travels agent
+- **Leave questions** → Automatically handed off to Leave Manager agent
+- **Travel approvals** → Automatically posted to Teams for managers
+
+This is **multi-agent orchestration** in action - specialized agents collaborating behind the scenes while providing a seamless user experience.
+
+### Real Business Impact:
+- Employees get instant help with travel AND leave questions
+- Managers receive organized approval requests in Teams
+- No manual routing or confusion about which system to use
+- Everything works through familiar Microsoft 365 tools
+
+**You've just built an enterprise-grade AI system in 1 hour!** 🎯
+
+### 🎉 Congratulations! You've completed the entire lab series!

@@ -4,9 +4,9 @@
 
 ## Overview
 
-In this comprehensive hands-on lab series, you mastered the art of building intelligent conversational agents using Microsoft Copilot Studio and implemented sophisticated multi-agent orchestration scenarios for enterprise business automation. Starting with Microsoft's Safe Travels agent template, you learned to create, customize, and enhance AI agents that provide personalized employee assistance while seamlessly integrating with your organization's Microsoft 365 ecosystem.
+In this focused 1-hour hands-on lab, you successfully built intelligent conversational agents using Microsoft Copilot Studio and experienced multi-agent orchestration in action. Starting with Microsoft's Safe Travels agent template, you created a working travel assistant agent, added business process automation, and then built a multi-agent system where specialized agents work together seamlessly.
 
-Your journey progressed from fundamental agent creation to advanced multi-agent collaboration, where you built specialized agents for different business domains (travel assistance and leave management) and configured them to work together intelligently. You discovered how to integrate external knowledge sources, create sophisticated Agent Flows for business process automation, and establish seamless connections between Copilot Studio, Microsoft Teams, and enterprise workflows. This comprehensive experience showcased the future of AI-driven workplace automation, where multiple specialized agents collaborate automatically to provide holistic business solutions that span departments, systems, and complex organizational processes.
+Your journey took you from basic agent creation to experiencing the future of enterprise AI - where multiple specialized agents collaborate automatically to provide comprehensive business solutions. You built a practical system that employees can actually use: a travel assistant that handles both travel questions and leave inquiries, with automated approval workflows that integrate directly with Microsoft Teams.
 
 ## Objective
 
@@ -56,14 +56,11 @@ Throughout this comprehensive lab experience, you worked extensively with:
 
 ## Lab Journey and Key Learning Outcomes
 
-### Exercise 1: Safe Travels Agent Creation & Enterprise Deployment
-You successfully created and deployed your first AI agent using Microsoft's Safe Travels template, learning fundamental agent development concepts, knowledge source integration, conversational AI design, and enterprise publishing to Microsoft Teams and Microsoft 365 Copilot. This foundation exercise established your understanding of agent lifecycle management, testing methodologies, and enterprise deployment best practices.
+### Exercise 1: Safe Travels Agent Creation & Teams Deployment (30 minutes)
+You successfully created and deployed your first AI agent using Microsoft's Safe Travels template, learned to test conversational AI capabilities, and published your agent to Microsoft Teams for real-world use. This established your foundation in agent development and enterprise deployment.
 
-### Exercise 2: Agent Flows & Business Process Automation  
-You advanced to sophisticated business process automation by creating Agent Flows that connect conversational AI with real-world workflows, specifically implementing travel approval automation that captures employee requests, posts them to Teams channels, and provides comprehensive feedback loops. This exercise demonstrated the power of combining conversational interfaces with enterprise workflow automation.
-
-### Exercise 3: Multi-Agent Orchestration & Advanced Integration
-You mastered advanced AI scenarios by building a specialized Leave Manager agent and implementing multi-agent orchestration where different agents collaborate intelligently based on user intent and domain expertise. This culminating exercise showcased the future of enterprise AI where multiple specialized agents work together seamlessly to provide comprehensive business solutions.
+### Exercise 2: Agent Flows & Multi-Agent Orchestration (30 minutes)
+You built business process automation by creating a travel approval flow that posts to Teams channels, then experienced the magic of multi-agent orchestration by building a Leave Manager agent and connecting it to your Safe Travels agent. This demonstrated how specialized agents can work together to provide comprehensive employee assistance.
 
 ## Real-World Business Impact
 

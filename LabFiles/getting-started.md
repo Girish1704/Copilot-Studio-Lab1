@@ -4,25 +4,21 @@
 
 ## Overview
 
-In this comprehensive hands-on lab, you will master the art of building intelligent conversational agents using Microsoft Copilot Studio and implement advanced multi-agent orchestration scenarios. Starting with the Safe Travels agent template, you'll learn to create, customize, and enhance AI agents that provide personalized travel assistance to employees. You'll discover how to integrate external knowledge sources, create sophisticated Agent Flows for business process automation, and build seamless connections between Copilot Studio and Microsoft Teams for enterprise-wide deployment.
+In this focused hands-on lab, you will learn to build intelligent conversational agents using Microsoft Copilot Studio and explore multi-agent orchestration concepts. Starting with the Safe Travels agent template, you'll create and customize an AI agent that provides travel assistance to employees, then enhance it with basic business process automation and multi-agent capabilities.
 
-The lab progresses from basic agent creation to advanced multi-agent orchestration, where you'll build a Leave Manager agent and configure it to work collaboratively with your Safe Travels agent. This powerful combination demonstrates how multiple specialized agents can work together to provide comprehensive business solutions, showcasing the future of AI-driven workplace automation. Through practical exercises with detailed screenshots and step-by-step guidance, you'll gain hands-on experience with the latest Microsoft AI technologies and enterprise integration capabilities.
+This practical lab is designed to be completed in exactly 60 minutes, focusing on the most essential skills: agent creation, Teams integration, and a taste of multi-agent orchestration. You'll get hands-on experience with Microsoft's latest AI technologies while building something genuinely useful for business scenarios. By the end, you'll have a working travel assistant agent deployed to Teams, plus understand how agents can work together to solve complex problems.
 
 ## Objective
 
-Master comprehensive AI agent development and multi-agent orchestration using Microsoft Copilot Studio. By the end of this lab, you will be able to:
+Learn essential AI agent development using Microsoft Copilot Studio in just 1 hour. By the end of this lab, you will be able to:
 
-- **Create and Customize AI Agents:** Build intelligent conversational agents from templates in Copilot Studio, customize them with company-specific knowledge sources, and configure them to meet specific business requirements for employee assistance and automation.
+- **Create and Deploy AI Agents:** Build a working Safe Travels agent from template, customize it with knowledge sources, and successfully publish it to Microsoft Teams for real-world use.
 
-- **Implement Agent Flows and Business Process Integration:** Design and deploy sophisticated Agent Flows that automate business processes, integrate with Microsoft Teams channels, and create seamless workflows for tasks like travel approval requests and employee communications.
+- **Integrate with Business Processes:** Create a basic Agent Flow that automates travel approval requests and posts them to Teams channels, demonstrating practical business automation.
 
-- **Deploy Agents Across Microsoft 365 Ecosystem:** Publish and distribute custom agents to Microsoft Teams and Microsoft 365 Copilot, ensuring enterprise-wide accessibility and integration with existing collaboration tools and workflows.
+- **Understand Multi-Agent Concepts:** Experience how specialized agents can work together by adding a simple Leave Manager agent and seeing multi-agent orchestration in action.
 
-- **Build Multi-Agent Orchestration Systems:** Create specialized agents for different business functions (travel assistance, leave management) and configure them to work collaboratively, demonstrating advanced multi-agent scenarios where agents delegate tasks and share information.
-
-- **Configure Enterprise Integration and Security:** Set up proper environment management, implement secure authentication flows, and establish governance practices for AI agent deployment in enterprise environments.
-
-- **Optimize Agent Performance and User Experience:** Fine-tune agent responses, implement custom topics and knowledge integration, and create intuitive conversational interfaces that provide value to end users.
+- **Deploy to Enterprise Platforms:** Successfully publish your agents to Microsoft Teams and Microsoft 365 Copilot, making them accessible to end users in familiar environments.
 
 ## Pre-requisites
 
@@ -34,13 +30,11 @@ Master comprehensive AI agent development and multi-agent orchestration using Mi
 
 ## Architecture
 
-You'll progress through a comprehensive three-exercise journey designed for maximum learning impact:
+You'll complete a focused two-exercise journey that delivers maximum value in 60 minutes:
 
-1. **Safe Travels Agent Creation & Deployment (20 mins):** Build and customize the Safe Travels agent from template, integrate company travel policies, and publish to Teams and Microsoft 365 Copilot for enterprise access.
+1. **Safe Travels Agent Creation & Teams Deployment (30 mins):** Build and customize the Safe Travels agent from template, test its capabilities, and publish to Teams for immediate use by employees.
 
-2. **Agent Flows & Business Process Automation (20 mins):** Create sophisticated Agent Flows for travel approval workflows, integrate with Teams channels for automated notifications, and build custom topics that leverage flow-based automation.
-
-3. **Multi-Agent Orchestration & Advanced Integration (20 mins):** Develop a specialized Leave Manager agent, implement multi-agent collaboration scenarios, and configure intelligent task delegation between agents for complex business processes.
+2. **Agent Flows & Multi-Agent Basics (30 mins):** Create a simple travel approval flow, set up basic multi-agent orchestration with a Leave Manager agent, and see how agents can work together to handle complex requests.
 
 ## Architecture Diagram
 

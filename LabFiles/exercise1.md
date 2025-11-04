@@ -1,22 +1,21 @@
-# Exercise 1: Create Safe Travels Agent and Deploy to Microsoft 365
+# Exercise 1: Create Safe Travels Agent and Deploy to Microsoft Teams
 
-### Estimated Duration: 20 Minutes
+### Estimated Duration: 30 Minutes
 
 ## Overview
 
-In this foundational exercise, you will create your first intelligent conversational agent using Microsoft Copilot Studio's Safe Travels template. You'll learn the complete lifecycle of agent development, from initial creation and customization to enterprise deployment across Microsoft Teams and Microsoft 365 Copilot. The Safe Travels agent serves as a Business-to-Employee (B2E) solution that provides comprehensive travel assistance, helping employees access travel information, company policies, and essential travel-related guidance.
+In this foundational exercise, you'll create your first AI agent using Microsoft Copilot Studio's Safe Travels template. This is a practical, hands-on introduction to conversational AI that will give you a working travel assistant agent deployed to Microsoft Teams by the end of 30 minutes.
 
-You'll discover how to leverage pre-built agent templates to accelerate development, customize knowledge sources with company-specific information, and integrate seamlessly with your organization's existing Microsoft 365 ecosystem. This exercise establishes the foundation for more advanced agent development scenarios and demonstrates the power of low-code AI development using Microsoft's enterprise-grade tools.
+The Safe Travels agent will help employees with travel-related questions, policy information, and guidance. You'll see how easy it is to create powerful AI agents using templates, test them thoroughly, and deploy them to your organization's collaboration platform. This exercise focuses on getting you comfortable with the core agent development workflow that applies to any business scenario.
 
 ## Objectives
 
 You will be able to complete the following tasks:
 
-- Task 1: Create and customize the Safe Travels agent from template
-- Task 2: Integrate company-specific knowledge sources and policies  
-- Task 3: Test agent functionality and conversational capabilities
-- Task 4: Publish agent to Microsoft Teams and Microsoft 365 Copilot
-- Task 5: Validate enterprise deployment and user accessibility
+- Task 1: Create the Safe Travels agent from template (8 mins)
+- Task 2: Add company Travel Policy knowledge source (5 mins)
+- Task 3: Test enhanced agent functionality (7 mins)  
+- Task 4: Publish and deploy agent to Microsoft Teams (10 mins)
 
 ## Prerequisites
 
@@ -57,13 +56,19 @@ In this task, you will navigate Microsoft Copilot Studio and create your first A
 
    ![Template Overview](../media/template-overview.png)
 
-1. Examine the **Knowledge** section where you'll see **US Travel Website** is already included as a knowledge source. This demonstrates how agents can leverage external information sources to provide accurate, up-to-date responses.
+1. Configure your Safe Travels agent with these specific details:
+   - **Agent name:** `Safe Travels Agent`
+   - **Description:** `A travel assistant agent that helps employees with travel planning, policies, and guidance`
+
+   ![Agent Configuration](../media/agent-configuration.png)
+
+1. Examine the **Knowledge** section where you'll see **US Travel Website** is already included as a knowledge source. Keep this default source - we'll add our company travel policy in the next task.
 
    ![Knowledge Sources](../media/knowledge-sources.png)
 
-   > **Knowledge Integration:** You can replace or supplement the default knowledge sources with your own company travel policies, destination guides, or internal resources.
+   > **Knowledge Integration:** The template includes general travel information, but we'll enhance it with company-specific policies next.
 
-1. For this exercise, keep all default settings and click **Create** to generate your Safe Travels agent.
+1. Review all settings and click **Create** to generate your Safe Travels agent.
 
    ![Create Agent Button](../media/create-agent-button.png)
 
@@ -73,15 +78,43 @@ In this task, you will navigate Microsoft Copilot Studio and create your first A
 
    > **Success Indicator:** You should see the agent's overview page with various configuration options, knowledge sources, and the ability to test the agent immediately.
 
-## Task 2: Test Agent Functionality and Capabilities
+## Task 2: Add Company Travel Policy Knowledge (5 minutes)
 
-In this task, you will validate your Safe Travels agent's functionality by testing its conversational capabilities and knowledge integration. This testing phase ensures the agent responds appropriately to travel-related queries before deploying to end users.
+In this task, you'll enhance your Safe Travels agent with company-specific travel policy information, making it more useful for real business scenarios.
 
-1. Locate the **Test** panel on the right side of the screen. If it's not visible, click the **Test** icon in the top-right corner to open it.
+1. On the agent's **Overview** page, scroll down to the **Knowledge** section and click **+ Add knowledge**.
+
+   ![Add Knowledge](../media/add-knowledge.png)
+
+1. Click **select to browse** to upload the company travel policy document.
+
+   ![Browse Knowledge](../media/browse-knowledge.png)
+
+1. Navigate to the lab files directory and select **Travel Policy.docx**. Click **Open**.
+
+   ![Upload Travel Policy](../media/upload-travel-policy.png)
+
+   > **File Location:** The Travel Policy.docx file contains company-specific travel guidelines, approval processes, and policy information that will enhance your agent's responses.
+
+1. Click **Add to agent** to integrate the travel policy with your agent.
+
+   ![Add Policy to Agent](../media/add-policy-agent.png)
+
+1. Wait for the file processing to complete. The status should change from **In progress** to **Ready** before proceeding.
+
+   ![Knowledge Processing](../media/knowledge-processing.png)
+
+   > **Processing Time:** Knowledge processing typically takes 1-2 minutes. The agent will now be able to answer company-specific travel policy questions.
+
+## Task 3: Test Enhanced Agent Functionality
+
+In this task, you'll test your enhanced Safe Travels agent to see how it handles both general travel questions and company-specific policy inquiries.
+
+1. Locate the **Test** panel on the right side of the screen. If it's not visible, click the **Test** icon in the top-right corner.
 
    ![Test Panel](../media/test-panel.png)
 
-1. In the test chat interface, enter your first query to test the agent's passport information capabilities:
+1. First, test the agent's passport information capabilities:
 
    ```
    How to apply for passport?
@@ -89,41 +122,29 @@ In this task, you will validate your Safe Travels agent's functionality by testi
 
    ![Passport Query](../media/passport-query.png)
 
-1. Press **Send** or hit **Enter** to submit your query and observe the agent's response.
+   > **Expected Response:** The agent should provide comprehensive passport application information from its built-in travel knowledge.
 
-   ![Passport Response](../media/passport-response.png)
-
-   > **Response Analysis:** The agent should provide comprehensive information about passport application procedures, demonstrating its ability to access and synthesize information from its knowledge sources.
-
-1. Test additional travel-related scenarios to validate the agent's knowledge breadth:
+1. Now test the company travel policy integration:
 
    ```
-   What documents do I need for international travel?
+   What is our company travel policy?
    ```
 
-   ![Documents Query](../media/documents-query.png)
+   ![Travel Policy Query](../media/travel-policy-query.png)
 
-1. Try a more specific destination query:
+   > **Enhanced Knowledge:** The agent should now provide company-specific travel policy information from the Travel Policy.docx file you uploaded.
 
-   ```
-   Tell me about travel requirements for New York
-   ```
-
-   ![Destination Query](../media/destination-query.png)
-
-   > **Knowledge Source Validation:** These tests confirm the agent is successfully accessing the US Travel Website knowledge source and providing relevant, contextual responses.
-
-1. Test the agent's conversational abilities with a follow-up question:
+1. Test a travel approval scenario:
 
    ```
-   What about vaccinations?
+   Need travel approval
    ```
 
-   ![Follow-up Query](../media/followup-query.png)
+   ![Travel Approval Query](../media/travel-approval-query.png)
 
-   > **Conversational Context:** The agent should maintain conversation context and provide relevant vaccination information related to travel.
+   > **Policy Integration:** The agent should provide specific guidance based on your company's travel approval process from the policy document.
 
-## Task 3: Publish Agent to Microsoft Teams
+## Task 4: Publish Agent to Microsoft Teams
 
 In this task, you will deploy your Safe Travels agent to Microsoft Teams, making it accessible to your organization's employees through their familiar collaboration environment. This integration demonstrates enterprise-scale agent deployment capabilities.
 
@@ -167,7 +188,7 @@ In this task, you will deploy your Safe Travels agent to Microsoft Teams, making
 
    ![Teams Open Agent](../media/teams-open-agent.png)
 
-## Task 4: Validate Enterprise Deployment
+## Task 5: Validate Enterprise Deployment
 
 In this task, you will validate that your Safe Travels agent is successfully deployed and accessible to users through Microsoft Teams, ensuring the enterprise integration is working correctly.
 
@@ -203,49 +224,18 @@ In this task, you will validate that your Safe Travels agent is successfully dep
 
    > **Deployment Verification:** You should see confirmation that your agent is successfully published and available through the Teams and Microsoft 365 Copilot channel.
 
-## Task 5: Enhance Agent with Company Knowledge
 
-In this task, you will enhance your Safe Travels agent by adding company-specific knowledge sources, demonstrating how to customize agents with organizational policies and information.
-
-1. From the agent's **Overview** page, scroll down to the **Knowledge** section and click **+ Add knowledge**.
-
-   ![Add Knowledge](../media/add-knowledge.png)
-
-1. In the knowledge source selection interface, click **select to browse** to upload a company document.
-
-   ![Browse Knowledge](../media/browse-knowledge.png)
-
-   > **Note:** For this lab exercise, you would typically upload a company travel policy document. The system supports various file formats including Word documents, PDFs, and text files.
-
-1. If you have access to company travel policy documents, select and upload them. Otherwise, you can continue with the existing knowledge sources for this exercise.
-
-   ![Upload Document](../media/upload-document.png)
-
-1. After uploading any additional knowledge sources, wait for the processing to complete. The status should change from **In progress** to **Ready**.
-
-   ![Knowledge Processing](../media/knowledge-processing.png)
-
-   > **Processing Time:** Knowledge source processing time varies based on document size and complexity. Always wait for "Ready" status before testing.
-
-1. Test the enhanced agent with company-specific queries if you've added additional knowledge sources:
-
-   ```
-   What is our company travel policy?
-   ```
-
-   ![Company Policy Query](../media/company-policy-query.png)
 
 ## Summary
 
-In this exercise, you successfully created your first AI agent using Microsoft Copilot Studio's Safe Travels template and deployed it across your Microsoft 365 environment. You learned how to leverage pre-built templates to accelerate agent development, customize knowledge sources for company-specific needs, and publish agents to enterprise channels for organization-wide access.
+Excellent work! In just 30 minutes, you've successfully:
 
-Key accomplishments include:
-- ✅ Created and configured the Safe Travels agent from template
-- ✅ Tested agent functionality and conversational capabilities  
-- ✅ Published agent to Microsoft Teams and Microsoft 365 Copilot
-- ✅ Validated enterprise deployment and user accessibility
-- ✅ Enhanced agent with additional knowledge sources
+- ✅ Created a working Safe Travels agent from Microsoft's template
+- ✅ Tested its travel assistance capabilities with real queries
+- ✅ Published the agent to Microsoft Teams for your organization
 
-Your Safe Travels agent is now ready to assist employees with travel-related inquiries and serves as the foundation for more advanced agent development scenarios. The skills you've gained in this exercise will be essential as you progress to building custom Agent Flows and implementing multi-agent orchestration in the following exercises.
+Your Safe Travels agent is now live and ready to help employees with travel questions, passport information, and destination guidance. You've experienced the power of low-code AI development - creating enterprise-ready conversational agents without any programming.
 
-### You have successfully completed this exercise. Click **Next >>** to continue to Exercise 2.
+**What's Next:** In Exercise 2, you'll add business process automation and see how multiple agents can work together to handle complex employee requests.
+
+### You have successfully completed Exercise 1. Click **Next >>** to continue to Exercise 2.

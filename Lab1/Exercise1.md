@@ -23,18 +23,16 @@ Master comprehensive AI agent development and multi-agent orchestration using Mi
 - **Configure Enterprise Integration and Security** with proper governance practices
 
 ### ⏱️ Duration: 1 Hour Total
-- Exercise 1: 20 minutes
-- Exercise 2: 20 minutes  
-- Exercise 3: 20 minutes
+- Exercise 1: 30 minutes (Safe Travels Agent Creation & Teams Deployment)
+- Exercise 2: 30 minutes (Agent Flows & Multi-Agent Orchestration)
 
 ### 🔗 Quick Navigation
 
 **Start Here:** 👉 **[Click to Begin with Getting Started Guide](../LabFiles/getting-started.md)**
 
 Or jump directly to specific exercises:
-- [Exercise 1: Safe Travels Agent Creation](../LabFiles/exercise1.md)
-- [Exercise 2: Agent Flows & Automation](../LabFiles/exercise2.md)
-- [Exercise 3: Multi-Agent Orchestration](../LabFiles/exercise3.md)
+- [Exercise 1: Safe Travels Agent Creation & Teams Deployment](../LabFiles/exercise1.md)
+- [Exercise 2: Agent Flows & Multi-Agent Orchestration](../LabFiles/exercise2.md)
 
 ---
 
