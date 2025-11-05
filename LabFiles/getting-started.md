@@ -38,26 +38,6 @@ You'll complete a focused two-exercise journey that delivers maximum value in 60
 
 ## Architecture Diagram
 
-```
-┌─────────────────────────────────────────────────────────────────────────────────┐
-│                            Microsoft 365 Ecosystem                              │
-├─────────────────────────────────────────────────────────────────────────────────┤
-│  ┌──────────────────┐    ┌──────────────────┐    ┌──────────────────┐         │
-│  │  Microsoft Teams │    │ Microsoft 365    │    │   SharePoint     │         │
-│  │   Integration    │◄──►│   Copilot        │◄──►│   Knowledge      │         │
-│  └──────────────────┘    └──────────────────┘    └──────────────────┘         │
-├─────────────────────────────────────────────────────────────────────────────────┤
-│                          Microsoft Copilot Studio                              │
-├─────────────────────────────────────────────────────────────────────────────────┤
-│  ┌──────────────────┐    ┌──────────────────┐    ┌──────────────────┐         │
-│  │  Safe Travels    │◄──►│   Agent Flows    │◄──►│ Leave Manager    │         │
-│  │     Agent        │    │  & Automation    │    │     Agent        │         │
-│  └──────────────────┘    └──────────────────┘    └──────────────────┘         │
-├─────────────────────────────────────────────────────────────────────────────────┤
-│                     Multi-Agent Orchestration                                  │
-└─────────────────────────────────────────────────────────────────────────────────┘
-```
-
 ## Explanation of Components
 
 - **Microsoft Copilot Studio:** The primary development environment for creating, customizing, and managing AI agents, providing visual design tools, integration capabilities, and publishing options for enterprise-wide deployment.
@@ -74,80 +54,77 @@ You'll complete a focused two-exercise journey that delivers maximum value in 60
 
 ## Getting Started with the Lab
 
-Once you're ready to dive in, your virtual machine and lab guide will be right at your fingertips within your web browser.
+Welcome to your Leave Management System with Microsoft Copilot Studio lab! We've prepared a seamless environment for you to explore and learn how to build, configure, and test an intelligent leave management agent. This lab will guide you through applying business rules, handling approvals, and integrating with Dataverse to deliver a secure and efficient experience. Let's begin by making the most of this workshop!
 
-![](../media/copilot-studio-welcome.png)
+### Accessing Your Lab Environment
 
-## Virtual Machine & Lab Guide
+Once you're ready to dive in, your virtual machine and Lab guide will be right at your fingertips within your web browser.
 
-Your virtual machine is your workhorse throughout the workshop. The lab guide is your roadmap to success.
+![](../media/gs-leave-1.png)
 
-## Exploring Your Lab Resources
+### Exploring Your Lab Resources
 
-To get a better understanding of your lab resources and credentials, navigate to the **Environment** tab.
+To get a better understanding of your Lab resources and credentials, navigate to the Environment tab.
 
-![](../media/environment-tab.png)
+![](../media/gs-leave-2.png)
 
-## Utilizing the Split Window Feature
+### Utilizing the Split Window Feature
 
-For convenience, you can open the lab guide in a separate window by selecting the **Split Window** button from the top right corner.
+For convenience, you can open the Lab guide in a separate window by selecting the Split Window button from the Top right corner
 
-![](../media/split-window.png)
+![](../media/gs-leave-3.png)
 
-## Managing Your Virtual Machine
+### Managing Your Virtual Machine
 
-On the **Resources (1)** tab, use the **Action buttons (2)** next to your VM. Feel free to **start**, **stop**, or **restart** your Virtual Machine as needed. Your experience is in your hands!
+From the **Resources (1)** tab, you can easily **start, stop, restart, or connect (2)** to your virtual machine—your experience is in your hands!
 
-![](../media/vm-management.png)
+![](../media/gs-leave-4.png)
 
-## Lab Guide Zoom In/Zoom Out
+## Let's Get Started with Power Apps Portal
 
-To adjust the zoom level for the environment page, click the **A↕ : 100%** icon located next to the timer in the lab environment.
+1. In the JumpVM, click on **Microsoft Edge** shortcut of Microsoft Edge browser which is created on desktop.
 
-![](../media/zoom-controls.png)
+   ![](../media/gs-leave-5.png)
 
-## Let's Get Started with Microsoft Copilot Studio
+1. Open a new browser tab and navigate to [https://make.powerapps.com/](https://make.powerapps.com/) (Power Apps portal).
 
-1. On the Lab VM, open **Microsoft Edge** browser from the taskbar.
+   >Note: Since you are working within a VM, please copy the above link and open it in the browser inside the VM.
 
-   ![](../media/edge-browser.png)
+1. On the **Sign into Microsoft** tab, you will see the login screen. Enter the provided email or username, and click **Next** to proceed.
 
-1. Navigate to **Microsoft Copilot Studio** by entering the following URL in the address bar:
+   - Email/Username: <inject key="AzureAdUserEmail"></inject>
 
-   ```
-   https://copilotstudio.microsoft.com
-   ```
+     ![](../media/gs-2.png)
 
-   ![](../media/copilot-studio-url.png)
+1. Now, enter the following password and click on **Sign in**.
 
-1. Sign in with your provided **Admin tenant credentials** when prompted:
+   - Password: <inject key="AzureAdUserPassword"></inject>
 
-   - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
+     ![](../media/gs-3.png)
 
-   ![](../media/login-email.png)
+     >**Note:** If you see the Action Required dialog box, then select Ask Later option.
+     
+1. If you see the pop-up **Stay Signed in?**, click **No**.
 
-1. Enter the **password** and click **Sign in**.
+   ![](../media/gs-4.png)
 
-   - **Password:** <inject key="AzureAdUserPassword"></inject>
+1. If the **Welcome to Power Apps** pop-up appears, leave the default country/region selection and click **Get started**.
 
-   ![](../media/login-password.png)
+   ![](../media/cor-mn-e5-g-6.png)
 
-1. If prompted with **"Stay signed in?"**, select **Yes** to maintain your session throughout the lab.
+1. You have now successfully logged in to the Power Apps portal. Keep the portal open, as you will be using it later in the lab.
 
-   ![](../media/stay-signed-in.png)
-
-1. Welcome to **Microsoft Copilot Studio**! You're now ready to build intelligent conversational agents.
-
-   ![](../media/copilot-studio-home.png)
+   ![](../media/gs-5.png)
 
 ## Support Contact
 
-The CloudLabs support team is available 24/7, 365 days a year, via email and live chat.
+The CloudLabs support team is available 24/7, 365 days a year, via email and live chat to ensure seamless assistance at any time. We offer dedicated support channels tailored specifically for both learners and instructors, ensuring that all your needs are promptly and efficiently addressed.Learner Support Contacts:
 
-**Learner Support Contacts:**
-- Email: cloudlabs-support@spektrasystems.com  
-- Live Chat: https://cloudlabs.ai/labs-support
+- Email Support: cloudlabs-support@spektrasystems.com
+- Live Chat Support: https://cloudlabs.ai/labs-support
 
-Click **Next** at the bottom-right to begin your AI agent development journey!
+Now, click on the **Next** from lower right corner to move on next page.
+
+   ![](../media/a-gs-g1.png)
 
 ## Happy Learning!!

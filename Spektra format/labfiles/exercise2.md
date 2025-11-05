@@ -54,6 +54,82 @@ In this task, you will load the GitHub Copilot organization usage data into Powe
 
    ![](../media/mang-cor-ex1-g9.png)
 
+1. To publish the agent, click **Publish** in the dialog.
+
+   ![](../media/ex2-travel-g93.png)
+
+1. Once published, you can see your **Safe Travels Agent (2)** listed in the Agents page. Click on **New agent (1)** to create additional agents if needed.
+
+   ![](../media/ex2-travel-g94.png)
+
+1. Click on the **+5 (1)** menu to access additional options. Select **Agents (2)** to manage your agents or access other features like Topics, Activity, Analytics, and Channels.
+
+   ![](../media/ex2-travel-g95.png)
+
+1. On the "Add an agent" page, you can add additional agents to work together in your workflow. Click **Add** to create a new agent that will collaborate with your existing Safe Travels Agent.
+
+   ![](../media/ex2-travel-g96.png)
+
+1. Choose how you want to extend your agent from the available options. You can either create a new agent or connect an existing agent from **Copilot Studio** or **Microsoft Fabric**. Select your preferred option to proceed.
+
+   ![](../media/ex2-travel-g97.png)
+
+1. Select the **Leave Manager Agent** from the available agents to connect.
+
+   ![](../media/ex2-travel-g98.png)
+
+1. Review the agent configuration and click **Add agent** to complete the connection.
+
+   ![](../media/ex2-travel-g99.png)
+
+1. Verify that the **Leave Manager Agent** is now connected and enabled in the Agents tab.
+
+   ![](../media/ex2-travel-g103.png)
+
+1. Navigate to **Generative AI (1)** settings, ensure **Yes (2)** is selected for orchestration, and click **Save (3)**.
+
+   ![](../media/ex2-travel-g104.png)
+
+1. Click on **New agent (1)** to create additional agents, then select the **Leave Manager Agent (2)**.
+
+   ![](../media/ex2-travel-g108.png)
+
+1. Click **Publish** to publish the Leave Manager Agent.
+
+   ![](../media/ex2-travel-g109.png)
+
+1. In the publish dialog, click **Publish** to confirm.
+
+   ![](../media/ex2-travel-g110.png)
+
+1. Navigate back to the **Safe Travels Agent (2)** from the agents list.
+
+   ![](../media/ex2-travel-g111.png)
+
+1. Click **Publish** to publish the Safe Travels Agent with the connected Leave Manager Agent.
+
+   ![](../media/ex2-travel-g112.png)
+
+1. In the publish dialog, click **Publish** to confirm.
+
+   ![](../media/ex2-travel-g113.png)
+
+1. Click **Test** to test the agent functionality.
+
+   ![](../media/ex2-travel-g114.png)
+
+1. Type **Check Leave balance (1)** and click the **send button (2)** to test the Leave Manager Agent integration.
+
+   ![](../media/ex2-travel-g84.png)
+
+1. Enter **1234 (1)** as the Employee ID and click **send (2)**.
+
+   ![](../media/ex2-travel-g85.png)
+
+1. Type **1234 is my Employee ID can you check my Leave balance (1)** and click **send (2)**.
+
+   ![](../media/ex2-travel-g86.png)
+
    >**Understanding Your Data**: The copilot_org dataset contains comprehensive daily usage metrics per user that provide crucial insights for management decision-making:
 > - **Suggestions & Acceptances**: Measures both the volume of AI assistance offered and the quality/relevance as indicated by developer acceptance rates
 > - **Teams & Roles**: Organizational context that allows you to compare adoption across different groups and experience levels

@@ -1,270 +1,229 @@
-# Exercise 2: Agent Flows and Multi-Agent Orchestration
+![](../media/ex2-travel-g1.png)
 
-### Estimated Duration: 30 Minutes
+![](../media/ex2-travel-g2.png)
 
-## Overview
+![](../media/ex2-travel-g3.png)
 
-In this exercise, you'll add business process automation to your Safe Travels agent and experience multi-agent orchestration. You'll create a simple Agent Flow for travel approvals and then add a second agent that specializes in leave management. This demonstrates how agents can work together and how businesses can automate processes using conversational AI.
+![](../media/ex2-travel-g4.png)
 
-This is where the magic happens - you'll see your agents come alive with real business functionality. By the end, you'll have a travel approval system that posts requests to Teams, plus a multi-agent setup where your Safe Travels agent can automatically hand off leave-related questions to a specialized Leave Manager agent.
+![](../media/ex2-travel-g5.png)
 
-## Objectives
+![](../media/ex2-travel-g6.png)
 
-You will be able to complete the following tasks:
+![](../media/ex2-travel-g7.png)
 
-- Task 1: Create a simple travel approval flow (15 mins)
-- Task 2: Build a Leave Manager agent and set up multi-agent orchestration (15 mins)
+![](../media/ex2-travel-g8.png)
 
-## Prerequisites
+![](../media/ex2-travel-g9.png)
 
-- Completed **Exercise 1** with published Safe Travels agent
-- Access to **Microsoft Teams** with team and channel creation permissions
-- Understanding of basic workflow concepts and business process automation
-- **Safe Travels agent** available in your Copilot Studio environment
+![](../media/ex2-travel-g10.png)
 
-## Task 1: Create Simple Travel Approval Flow (15 minutes)
+![](../media/ex2-travel-g11.png)
 
-In this task, you'll add a basic business process to your Safe Travels agent by creating a simple flow that can capture travel approval requests. This demonstrates how agents can trigger real business processes.
+![](../media/ex2-travel-g12.png)
 
-### Step 1: Quick Teams Setup (3 minutes)
+![](../media/ex2-travel-g13.png)
 
-1. Open **Microsoft Teams** and quickly create:
-   - **Team name:** `HR Team`
-   - **Channel name:** `Travel Approvals`
-   - Skip adding members for this lab
+![](../media/ex2-travel-g14.png)
 
-   ![Quick Teams Setup](../media/quick-teams-setup.png)
+![](../media/ex2-travel-g15.png)
 
-   > **Quick Setup:** We're keeping this simple - just one team and channel for approval notifications.
+![](../media/ex2-travel-g16.png)
 
-### Step 2: Create Basic Agent Flow (7 minutes)
+![](../media/ex2-travel-g17.png)
 
-1. In **Copilot Studio**, go to your **Safe Travels** agent and select **Flows** from the left menu.
+![](../media/ex2-travel-g18.png)
 
-   ![Navigate to Flows](../media/navigate-flows.png)
+![](../media/ex2-travel-g19.png)
 
-1. Click **New agent flow** and set up:
-   - **Trigger:** "When an agent calls the flow"
-   - **Inputs:** Add two inputs:
-     - `Employee ID` (Number)
-     - `Purpose` (Text)
+![](../media/ex2-travel-g20.png)
 
-   ![Basic Flow Setup](../media/basic-flow-setup.png)
+![](../media/ex2-travel-g21.png)
 
-### Step 3: Add Teams Integration (5 minutes)
+![](../media/ex2-travel-g22.png)
 
-1. Add action: **Teams > Post message in a chat or channel**
-2. Configure quickly:
-   - **Team:** HR Team
-   - **Channel:** Travel Approvals  
-   - **Message:** "Travel request from Employee ID: [Employee ID], Purpose: [Purpose]"
+![](../media/ex2-travel-g23.png)
 
-   ![Teams Integration](../media/teams-integration-simple.png)
+![](../media/ex2-travel-g24.png)
 
-3. Add final action: **Respond to agent** and configure the output:
-   - Click **Add an output**
-   - **Output Type:** Select `Text`
-   - **Name:** Enter `Output`
-   - **Value:** Enter `Request submitted`
-   - **Description:** Enter `Confirmation message for travel request`
+![](../media/ex2-travel-g25.png)
 
-   ![Configure Response Output](../media/configure-response-output.png)
+![](../media/ex2-travel-g26.png)
 
-   > **Important:** All fields must be filled to avoid "Invalid parameters" error.
+![](../media/ex2-travel-g27.png)
 
-4. **Save draft** first, then **Publish** your flow
-5. Name it "Travel Approval Flow" in the Overview tab
+![](../media/ex2-travel-g28.png)
 
-   ![Flow Complete](../media/flow-complete.png)
+![](../media/ex2-travel-g29.png)
 
-### Step 4: Connect Flow to Safe Travels Agent (5 minutes)
+![](../media/ex2-travel-g30.png)
 
-1. Go back to your **Safe Travels** agent and navigate to the **Overview** page.
+![](../media/ex2-travel-g31.png)
 
-2. Scroll down and click **Add tool**.
+![](../media/ex2-travel-g32.png)
 
-   ![Add Tool](../media/add-tool.png)
+![](../media/ex2-travel-g33.png)
 
-3. Go to the **Flow** tab and select your **Travel Approval Flow**.
+![](../media/ex2-travel-g34.png)
 
-   ![Select Flow Tool](../media/select-flow-tool.png)
+![](../media/ex2-travel-g35.png)
 
-4. Click **Add to agent** to integrate the flow.
+![](../media/ex2-travel-g36.png)
 
-   ![Flow Added to Agent](../media/flow-added-agent.png)
+![](../media/ex2-travel-g37.png)
 
-5. Now create a topic to use this flow. Go to **Topics** and click **+ Add a topic** > **From blank**.
+![](../media/ex2-travel-g38.png)
 
-   ![Add Topic From Blank](../media/add-topic-from-blank.png)
+![](../media/ex2-travel-g39.png)
 
-6. Configure the topic details:
-   - **Name:** `Travel Approval Request`
-   - **Display name:** `Travel Approval Request`
+![](../media/ex2-travel-g40.png)
 
-   ![Topic Name Configuration](../media/topic-name-config.png)
+![](../media/ex2-travel-g41.png)
 
-7. In the topic designer, you'll see the trigger node. Add trigger phrases like:
-   - `I need travel approval`
-   - `Travel approval request`
-   - `Request travel approval`
+![](../media/ex2-travel-g42.png)
 
-   ![Add Trigger Phrases](../media/add-trigger-phrases.png)
+![](../media/ex2-travel-g43.png)
 
-8. Add a **Question** node to collect Employee ID:
-   - Click **+ Add a node** > **Ask a question**
-   - **Question:** `What is your Employee ID?`
-   - **Identify:** Choose `Number`
-   - **Save response as:** `EmployeeID`
+![](../media/ex2-travel-g44.png)
 
-   ![Add Employee ID Question](../media/add-employee-id-question.png)
+![](../media/ex2-travel-g45.png)
 
-9. Add another **Question** node to collect Purpose:
-   - Click **+ Add a node** > **Ask a question**  
-   - **Question:** `What is the purpose of your travel?`
-   - **Identify:** Choose `Text`
-   - **Save response as:** `Purpose`
+![](../media/ex2-travel-g46.png)
 
-   ![Add Purpose Question](../media/add-purpose-question.png)
+![](../media/ex2-travel-g47.png)
 
-10. Add the flow action:
-    - Click **+ Add a node** > **Call an action** > **Travel Approval Flow**
-    - Map the variables:
-      - **Employee ID:** Select `EmployeeID` variable
-      - **Purpose:** Select `Purpose` variable
+![](../media/ex2-travel-g48.png)
 
-    ![Add Flow Action](../media/add-flow-action.png)
+![](../media/ex2-travel-g49.png)
 
-11. Add a final message node:
-    - Click **+ Add a node** > **Send a message**
-    - **Message:** Use the flow output variable `Output`
+![](../media/ex2-travel-g50.png)
 
-    ![Add Final Message](../media/add-final-message.png)
+![](../media/ex2-travel-g51.png)
 
-12. **Save** and **Publish** your agent.
+![](../media/ex2-travel-g52.png)
 
-8. **Test it:** In the test panel, type "I need travel approval" and provide Employee ID: 1234 and Purpose: "Client meeting"
+![](../media/ex2-travel-g53.png)
 
-   ![Test Travel Approval](../media/test-travel-approval.png)
+![](../media/ex2-travel-g54.png)
 
-## Task 2: Multi-Agent Orchestration Setup (10 minutes)
+![](../media/ex2-travel-g55.png)
 
-Now for the exciting part - you'll create a second agent and see how agents can work together automatically!
+![](../media/ex2-travel-g56.png)
 
-### Step 1: Create Leave Manager Agent (7 minutes)
+![](../media/ex2-travel-g57.png)
 
-1. In Copilot Studio, click **+ New agent** and select **Configure** (not template).
+![](../media/ex2-travel-g58.png)
 
-2. Set up your Leave Manager agent:
-   - **Name:** `Leave Manager Agent`
-   - **Description:** `Helps employees check leave balances and policies`
-   - **Instructions:** `Track employee leaves and provide leave balance information`
+![](../media/ex2-travel-g59.png)
 
-   ![Leave Agent Setup](../media/leave-agent-setup.png)
+![](../media/ex2-travel-g60.png)
 
-3. **Add Knowledge Source:** Click **+ Add knowledge** and upload **Leave balance Tracker.xlsx** from the lab files.
+![](../media/ex2-travel-g61.png)
 
-   ![Upload Leave Tracker](../media/upload-leave-tracker.png)
+![](../media/ex2-travel-g62.png)
 
-   > **File Content:** This Excel file contains employee leave balance data that will enable your agent to provide accurate, personalized leave information.
+![](../media/ex2-travel-g63.png)
 
-4. Wait for processing to complete (status shows "Ready").
+![](../media/ex2-travel-g64.png)
 
-4. Create a topic to handle leave balance queries. Select **+ Add a topic** → **Add from description with Copilot** from the **Topics** tab.
+![](../media/ex2-travel-g65.png)
 
-   ![Add Topic with Copilot](../media/add-topic-copilot.png)
+![](../media/ex2-travel-g66.png)
 
-6. Enter the following details and click **Create**:
-   - **Name:** `Leave Balance Checker`
-   - **Create a topic to:** `Get the Employee ID from the user and check and reply with the leave balance based on the tracker added as knowledge source`
+![](../media/ex2-travel-g67.png)
 
-   ![Leave Balance Topic Creation](../media/leave-balance-topic-creation.png)
+![](../media/ex2-travel-g68.png)
 
-7. Review the generated topic. The system should create nodes to:
-   - Get the Employee ID from the user (as a Number)
-   - Search and retrieve leave balance information from the knowledge source
-   - Provide response with the employee's leave balance
+![](../media/ex2-travel-g69.png)
 
-   ![Review Leave Topic](../media/review-leave-topic.png)
+![](../media/ex2-travel-g70.png)
 
-8. Check if the topic has the node to get the Employee ID and then click **Save**. Here, we should have a node for getting the Employee ID and a Message node stating that the balance is being retrieved.
+![](../media/ex2-travel-g71.png)
 
-   Check the topic once and remove other nodes that have got created apart from the above ones. Then **Save** the topic.
+![](../media/ex2-travel-g72.png)
 
-   ![Enhanced Topic Structure](../media/enhanced-topic-structure.png)
+![](../media/ex2-travel-g73.png)
 
-9. Send a message **"Check Leave balance"** from the Test pane.
+![](../media/ex2-travel-g74.png)
 
-   ![Test Leave Balance](../media/test-leave-balance.png)
+![](../media/ex2-travel-g75.png)
 
-10. Enter **1234** for Employee ID when prompted.
+![](../media/ex2-travel-g76.png)
 
-   ![Enter Employee ID](../media/enter-employee-id.png)
+![](../media/ex2-travel-g77.png)
 
-11. Check the response from the agent. This should be retrieved from the knowledge asset added to the agent.
+![](../media/ex2-travel-g78.png)
 
-   ![Leave Balance Response](../media/leave-balance-response.png)
+![](../media/ex2-travel-g79.png)
 
-12. Select **Publish** and wait till the agent is published.
+![](../media/ex2-travel-g80.png)
 
-   ![Leave Agent Published](../media/leave-agent-published.png)
+![](../media/ex2-travel-g81.png)
 
-### Step 2: Connect Agents (Multi-Agent Magic!) (3 minutes)
+![](../media/ex2-travel-g82.png)
 
-1. Go back to your **Safe Travels** agent.
+![](../media/ex2-travel-g83.png)
 
-2. Navigate to **Agents** tab and click **+ Add**.
+![](../media/ex2-travel-g84.png)
 
-   ![Add Agent Integration](../media/add-agent-integration.png)
+![](../media/ex2-travel-g85.png)
 
-3. Select **Copilot Studio** and choose your **Leave Manager Agent**.
+![](../media/ex2-travel-g86.png)
 
-4. Click **Add agent** to connect them.
+![](../media/ex2-travel-g87.png)
 
-   ![Agent Connected](../media/agent-connected.png)
+![](../media/ex2-travel-g88.png)
 
-5. **Publish** your updated Safe Travels agent.
+![](../media/ex2-travel-g89.png)
 
-### Step 3: Test Multi-Agent Magic! (2 minutes)
+![](../media/ex2-travel-g90.png)
 
-1. In your Safe Travels agent test panel, try:
-   ```
-   Check my leave balance
-   ```
+![](../media/ex2-travel-g91.png)
 
-2. Watch as your Safe Travels agent automatically hands off the request to the Leave Manager agent!
+![](../media/ex2-travel-g92.png)
 
-3. When prompted, enter Employee ID: `1234`
+![](../media/ex2-travel-g93.png)
 
-4. See how the Leave Manager responds through the Safe Travels interface - this is multi-agent orchestration in action!
+![](../media/ex2-travel-g94.png)
 
-   ![Multi-Agent Success](../media/multi-agent-success.png)
+![](../media/ex2-travel-g95.png)
 
-   > **Amazing!** You now have two agents working together - one handles travel, the other handles leave, but users only need to talk to one interface!
+![](../media/ex2-travel-g96.png)
 
-## Summary
+![](../media/ex2-travel-g97.png)
 
-**Incredible work!** In just 30 minutes, you've built something truly impressive:
+![](../media/ex2-travel-g98.png)
 
-### What You've Accomplished:
-- Created a travel approval flow that posts to Teams automatically
-- Built a specialized Leave Manager agent from scratch  
-- Implemented multi-agent orchestration - agents working together!
-- Experienced the future of enterprise AI automation
+![](../media/ex2-travel-g99.png)
 
-### The Magic You've Created:
-Your employees can now talk to **one agent** (Safe Travels) and get help with:
-- **Travel questions** → Handled directly by Safe Travels agent
-- **Leave questions** → Automatically handed off to Leave Manager agent
-- **Travel approvals** → Automatically posted to Teams for managers
+![](../media/ex2-travel-g100.png)
 
-This is **multi-agent orchestration** in action - specialized agents collaborating behind the scenes while providing a seamless user experience.
+![](../media/ex2-travel-g101.png)
 
-### Real Business Impact:
-- Employees get instant help with travel AND leave questions
-- Managers receive organized approval requests in Teams
-- No manual routing or confusion about which system to use
-- Everything works through familiar Microsoft 365 tools
+![](../media/ex2-travel-g102.png)
 
-**You've just built an enterprise-grade AI system in 1 hour!**
+![](../media/ex2-travel-g103.png)
 
-### Congratulations! You've completed the entire lab series!
+![](../media/ex2-travel-g104.png)
+
+![](../media/ex2-travel-g105.png)
+
+![](../media/ex2-travel-g106.png)
+
+![](../media/ex2-travel-g107.png)
+
+![](../media/ex2-travel-g108.png)
+
+![](../media/ex2-travel-g109.png)
+
+![](../media/ex2-travel-g110.png)
+
+![](../media/ex2-travel-g111.png)
+
+![](../media/ex2-travel-g112.png)
+
+![](../media/ex2-travel-g113.png)
+
+![](../media/ex2-travel-g114.png)
+
+![](../media/ex2-travel-15.png)
