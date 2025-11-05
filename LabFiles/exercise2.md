@@ -169,13 +169,42 @@ Now for the exciting part - you'll create a second agent and see how agents can 
 
 4. Wait for processing to complete (status shows "Ready").
 
-5. Create a topic called "Leave Balance Checker":
-   - **Name:** `Leave Balance Checker`
-   - **Description:** `Get Employee ID and check leave balance from tracker`
-   
-   ![Leave Topic Setup](../media/leave-topic-setup.png)
+4. Create a topic to handle leave balance queries. Select **+ Add a topic** → **Add from description with Copilot** from the **Topics** tab.
 
-6. **Save** and **Publish** the Leave Manager agent.
+   ![Add Topic with Copilot](../media/add-topic-copilot.png)
+
+6. Enter the following details and click **Create**:
+   - **Name:** `Leave Balance Checker`
+   - **Create a topic to:** `Get the Employee ID from the user and check and reply with the leave balance based on the tracker added as knowledge source`
+
+   ![Leave Balance Topic Creation](../media/leave-balance-topic-creation.png)
+
+7. Review the generated topic. The system should create nodes to:
+   - Get the Employee ID from the user (as a Number)
+   - Search and retrieve leave balance information from the knowledge source
+   - Provide response with the employee's leave balance
+
+   ![Review Leave Topic](../media/review-leave-topic.png)
+
+8. Check if the topic has the node to get the Employee ID and then click **Save**. Here, we should have a node for getting the Employee ID and a Message node stating that the balance is being retrieved.
+
+   Check the topic once and remove other nodes that have got created apart from the above ones. Then **Save** the topic.
+
+   ![Enhanced Topic Structure](../media/enhanced-topic-structure.png)
+
+9. Send a message **"Check Leave balance"** from the Test pane.
+
+   ![Test Leave Balance](../media/test-leave-balance.png)
+
+10. Enter **1234** for Employee ID when prompted.
+
+   ![Enter Employee ID](../media/enter-employee-id.png)
+
+11. Check the response from the agent. This should be retrieved from the knowledge asset added to the agent.
+
+   ![Leave Balance Response](../media/leave-balance-response.png)
+
+12. Select **Publish** and wait till the agent is published.
 
    ![Leave Agent Published](../media/leave-agent-published.png)
 
@@ -210,17 +239,17 @@ Now for the exciting part - you'll create a second agent and see how agents can 
 
    ![Multi-Agent Success](../media/multi-agent-success.png)
 
-   > **🎉 Amazing!** You now have two agents working together - one handles travel, the other handles leave, but users only need to talk to one interface!
+   > **Amazing!** You now have two agents working together - one handles travel, the other handles leave, but users only need to talk to one interface!
 
 ## Summary
 
-🚀 **Incredible work!** In just 30 minutes, you've built something truly impressive:
+**Incredible work!** In just 30 minutes, you've built something truly impressive:
 
 ### What You've Accomplished:
-- ✅ Created a travel approval flow that posts to Teams automatically
-- ✅ Built a specialized Leave Manager agent from scratch  
-- ✅ Implemented multi-agent orchestration - agents working together!
-- ✅ Experienced the future of enterprise AI automation
+- Created a travel approval flow that posts to Teams automatically
+- Built a specialized Leave Manager agent from scratch  
+- Implemented multi-agent orchestration - agents working together!
+- Experienced the future of enterprise AI automation
 
 ### The Magic You've Created:
 Your employees can now talk to **one agent** (Safe Travels) and get help with:
@@ -236,6 +265,6 @@ This is **multi-agent orchestration** in action - specialized agents collaborati
 - No manual routing or confusion about which system to use
 - Everything works through familiar Microsoft 365 tools
 
-**You've just built an enterprise-grade AI system in 1 hour!** 🎯
+**You've just built an enterprise-grade AI system in 1 hour!**
 
-### 🎉 Congratulations! You've completed the entire lab series!
+### Congratulations! You've completed the entire lab series!

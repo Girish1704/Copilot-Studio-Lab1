@@ -242,10 +242,10 @@ In this task, you will publish your Safe Travels agent and deploy it to Microsof
 
 Excellent work! In just 30 minutes, you've successfully:
 
-- ✅ Set up a Power Platform environment for agent development
-- ✅ Created a working Safe Travels agent using Microsoft's template
-- ✅ Tested the agent's travel assistance capabilities with real queries
-- ✅ Published and deployed the agent to Microsoft Teams for your organization
+- Set up a Power Platform environment for agent development
+- Created a working Safe Travels agent using Microsoft's template
+- Tested the agent's travel assistance capabilities with real queries
+- Published and deployed the agent to Microsoft Teams for your organization
 
 Your Safe Travels agent is now live and ready to help employees with travel questions, passport information, and destination guidance. You've experienced the power of low-code AI development - creating enterprise-ready conversational agents without any programming.
 
