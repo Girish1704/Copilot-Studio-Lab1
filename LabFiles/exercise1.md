@@ -1,254 +1,201 @@
-# Exercise 1: Create Safe Travels Agent and Deploy to Microsoft Teams
+# Exercise 1: Create and Deploy Safe Travels Agent
 
 ### Estimated Duration: 30 Minutes
 
 ## Overview
 
-In this foundational exercise, you'll create your first AI agent using Microsoft Copilot Studio's Safe Travels template. This is a practical, hands-on introduction to conversational AI that will give you a working travel assistant agent deployed to Microsoft Teams by the end of 30 minutes.
+In this exercise, you will create your first AI agent using Microsoft Copilot Studio's Safe Travels template. You'll learn the fundamentals of agent creation, test conversational AI capabilities, and successfully publish your agent to Microsoft Teams for real-world enterprise use. This exercise establishes your foundation in modern AI agent development and enterprise deployment.
 
-The Safe Travels agent will help employees with travel-related questions, policy information, and guidance. You'll see how easy it is to create powerful AI agents using templates, test them thoroughly, and deploy them to your organization's collaboration platform. This exercise focuses on getting you comfortable with the core agent development workflow that applies to any business scenario.
+The Safe Travels agent is a Business-to-Employee (B2E) conversational agent designed to provide comprehensive travel assistance to company employees. You'll customize this agent with company-specific knowledge and see how it can help employees with travel planning, policy questions, and destination information. By the end of this exercise, you'll have a working travel assistant deployed to Teams that employees can use immediately.
 
 ## Objectives
 
 You will be able to complete the following tasks:
 
-- Task 1: Set up Power Platform environment and navigate to Copilot Studio
-- Task 2: Create Safe Travels agent from template  
-- Task 3: Test and validate agent functionality
-- Task 4: Publish and deploy agent to Microsoft Teams
+- Task 1: Set up Microsoft Copilot Studio environment and create Safe Travels agent from template
+- Task 2: Test and customize the agent with company-specific knowledge sources
+- Task 3: Publish the agent to Microsoft Teams for enterprise deployment
 
 ## Prerequisites
 
-- Access to **Microsoft Copilot Studio** with agent creation permissions
-- **Microsoft Teams** access for testing deployed agents
-- **Admin tenant credentials** for publishing to enterprise channels
-- Basic understanding of conversational AI and Microsoft 365 collaboration tools
+- Completion of **Getting Started** section with proper environment setup
+- **Microsoft 365 Admin Tenant Credentials** with Copilot Studio permissions
+- **Access to Microsoft Copilot Studio** environment with agent creation capabilities
+- **Microsoft Teams** access for testing and deployment
+- **Understanding of conversational AI concepts** and business process automation
 
-## Task 1: Set Up Power Platform Environment
+## Task 1: Create Safe Travels Agent from Template
 
-In this task, you will set up the Power Platform environment that will support your Copilot Studio agents with the necessary data sources and knowledge files.
+In this task, you'll set up your Copilot Studio environment and create your first AI agent using Microsoft's pre-built Safe Travels template.
 
-1. Navigate to **Power Platform** and sign in with your admin tenant credentials. From the left navigation menu, select **Tables (1)** and click on **Create with Excel or .CSV file (2)** to set up your environment with the lab data files.
+### Step 1: Access Copilot Studio Environment
 
-   ![Power Platform Tables](../media/ex1-travel-g1.png)
+1. From a browser, navigate to [https://copilotstudio.microsoft.com/](https://copilotstudio.microsoft.com/).
 
-   > **Environment Foundation:** This step creates the foundational environment that will support your agents with company-specific data and knowledge sources.
+1. The **Start free trial** page opens. Select your country and click **Start free trial**.
 
-1. In the **Create in new environment** dialog that appears, you'll see a message about permissions. Click **Create** to create a free developer environment.
+   ![Safe Travels Template](../media/image1.png)
 
-   ![Create Environment Dialog](../media/ex1-travel-g2.png)
+1. Select the **Dev One** environment to ensure proper workspace isolation.
 
-   > **Note:** The system will create a new developer environment which may take a moment to provision. You'll be redirected when it's ready.
+   ![Environment Selection](../media/image2.png)
 
-1. Wait for the environment creation process to complete. The system will show progress indicators during setup.
+   ![Environment Confirmation](../media/image3.png)
 
-   ![Environment Creation Progress](../media/ex1-travel-g3.png)
+   > **Important:** If Copilot Studio does not show the Environment selection option, follow these steps:
+   > 1. Open [https://admin.powerplatform.microsoft.com/](https://admin.powerplatform.microsoft.com/)
+   > 2. Select **Manage** > **Environments** and note the **EnvironmentID** value
+   > 3. Navigate back to Copilot Studio using: `https://copilotstudio.microsoft.com/environments/<EnvironmentID>`
 
-1. Once the environment is ready, you'll see the Tables interface with various creation options available. The environment is now configured for agent development.
+### Step 2: Create Agent from Safe Travels Template
 
-   ![Environment Ready](../media/ex1-travel-g4.png)
+1. Select **+ Create** from the left navigation pane to begin agent creation.
 
-1. Navigate to **Microsoft Copilot Studio** by opening a new browser tab and going to `https://copilotstudio.microsoft.com`.
+   ![Create New Agent](../media/image6.png)
 
-   ![Navigate to Copilot Studio](../media/ex1-travel-g5.png)
+1. Under **Start with an agent template**, select **Safe Travels** to use the pre-built template.
 
-1. Sign in to Copilot Studio with your admin tenant credentials. You'll see the Copilot Studio welcome interface.
+   ![Safe Travels Template Selection](../media/image7.png)
 
-   ![Copilot Studio Welcome](../media/ex1-travel-g6.png)
+1. Review the Safe Travels template description. This template creates an agent designed to provide comprehensive travel assistance to company employees.
 
-## Task 2: Create Safe Travels Agent from Template
+   ![Template Overview](../media/image8.png)
 
-In this task, you will create your first AI agent using the pre-built Safe Travels template, which provides a solid foundation with built-in travel assistance capabilities.
+1. Browse through the setup page. Under **Knowledge**, you'll find that **US Travel Website** is already configured as a knowledge source. This can be customized later for your organization's specific needs.
 
-1. Once signed in to Copilot Studio, you'll see the main dashboard. From the left navigation pane, select **Create** to start building a new agent.
+   ![Knowledge Sources](../media/image9.png)
 
-   ![Copilot Studio Dashboard](../media/ex1-travel-g7.png)
+1. Select **Create** to generate the Safe Travels agent using the default template configuration.
 
-1. In the agent creation interface, you'll see different template options. Locate and click on the **Safe Travels** template to select it.
+   ![Create Agent](../media/image10.png)
 
-   ![Safe Travels Template Selection](../media/ex1-travel-g8.png)
+1. The agent is successfully created and opens automatically, displaying the **Overview** page with agent configuration and capabilities.
 
-   > **Template Benefits:** The Safe Travels template includes pre-configured conversational flows, travel-related knowledge sources, and common travel assistance scenarios, significantly reducing development time.
+   ![Agent Created Successfully](../media/image11.png)
 
-1. Review the template details and click **Use this template** to proceed with the Safe Travels template.
+## Task 2: Test and Customize the Agent
 
-   ![Use Template](../media/ex1-travel-g9.png)
+In this task, you'll test the agent's conversational capabilities and add company-specific knowledge to enhance its usefulness for your organization.
 
-1. Configure your Safe Travels agent with the following details:
-   - **Name:** `Safe Travels Agent`
-   - **Description:** `A travel assistant agent that helps employees with travel planning, policies, and guidance`
+### Step 1: Test Basic Agent Functionality
 
-   ![Agent Configuration](../media/ex1-travel-g10.png)
+1. Open the **Test** pane by clicking the Test icon in the top-right corner.
 
-1. Review all the configuration settings and click **Create** to generate your Safe Travels agent.
+   ![Open Test Pane](../media/image12.png)
 
-   ![Create Agent](../media/ex1-travel-g11.png)
+1. In the Test pane, enter **How to apply for passport?** and click **Send** to test the agent's knowledge capabilities.
 
-1. The system will process your agent creation. Wait for the creation process to complete.
+   ![Test Basic Query](../media/image12.png)
 
-   ![Agent Creation Progress](../media/ex1-travel-g12.png)
+1. Review the agent's response. Notice how it provides detailed information about passport applications using its built-in knowledge source.
 
-1. Once created successfully, you'll be taken to the agent's **Overview** page where you can see the agent details and configuration options.
+   ![Agent Response](../media/image13.png)
 
-   ![Agent Overview](../media/ex1-travel-g13.png)
+### Step 2: Add Company-Specific Knowledge
 
-   > **Success Indicator:** You should see the agent's overview page with various configuration options, knowledge sources, and the ability to test the agent immediately.
+1. From the **Overview** page, scroll down and select **+ Add knowledge** under the **Knowledge** section.
 
-## Task 3: Test and Validate Agent Functionality
+   ![Add Knowledge](../media/image30.png)
 
-In this task, you'll test your Safe Travels agent to validate its functionality and responses to travel-related queries.
+1. Click **select to browse** to upload company-specific documents.
 
-1. On the agent overview page, locate the **Test** button or panel on the right side of the screen to begin testing your agent.
+   ![Browse Files](../media/image31.png)
 
-   ![Test Agent Interface](../media/ex1-travel-g14.png)
+1. From **C:\Labfiles\Lab Files** folder, select **Travel Policy.docx** and click **Open**.
 
-1. In the test interface, start by testing the agent's passport information capabilities. Type the following query:
+   ![Select Travel Policy](../media/image32.png)
 
-   ```
-   How to apply for passport?
-   ```
+1. Click **Add to agent** to integrate the travel policy document into the agent's knowledge base.
 
-   ![Passport Information Query](../media/ex1-travel-g15.png)
+   ![Add Document](../media/image33.png)
 
-   > **Expected Response:** The agent should provide comprehensive passport application information from its built-in travel knowledge base.
+   ![Confirm Addition](../media/image34.png)
 
-1. Test another travel-related query to validate the agent's knowledge. Ask about travel destinations:
+1. Wait for the knowledge source to process. The status will change from **In progress** to **Ready** when complete.
 
-   ```
-   Tell me about travel to New York
-   ```
+   ![Processing Status](../media/image35.png)
 
-   ![Travel Destination Query](../media/ex1-travel-g16.png)
+   ![Ready Status](../media/image36.png)
 
-1. Continue testing with additional travel scenarios to ensure the agent responds appropriately to various travel-related questions.
+### Step 3: Test Enhanced Agent Capabilities
 
-   ![Additional Travel Testing](../media/ex1-travel-g17.png)
+1. In the **Test** pane, enter **Need travel approval** to test how the agent handles company-specific travel policies.
 
-1. Test the agent's ability to handle travel policy questions:
+   ![Test Travel Approval](../media/image28.png)
 
-   ```
-   What should I know about business travel?
-   ```
+1. Review the agent's response. Notice how it now provides company-specific guidance based on the uploaded Travel Policy document.
 
-   ![Business Travel Query](../media/ex1-travel-g18.png)
+   ![Enhanced Response](../media/image29.png)
 
-   > **Knowledge Integration:** The agent leverages its built-in travel knowledge to provide helpful responses across various travel scenarios.
+## Task 3: Publish Agent to Microsoft Teams
 
-## Task 4: Publish and Deploy Agent to Microsoft Teams
+In this task, you'll publish your Safe Travels agent to Microsoft Teams, making it available for employees across your organization.
 
-In this task, you will publish your Safe Travels agent and deploy it to Microsoft Teams, making it accessible to your organization's employees.
+### Step 1: Publish the Agent
 
-1. After testing, click the **Publish** button in the top-right corner of the agent interface to begin the publishing process.
+1. Select **Publish** from the top-right corner of the agent interface.
 
-   ![Publish Agent](../media/ex1-travel-g19.png)
+   ![Publish Agent](../media/image15.png)
 
-1. In the publish dialog, review the publishing details and click **Publish** to confirm and publish your agent.
+1. In the confirmation dialog, select **Publish** to make the agent available for deployment.
 
-   ![Publish Confirmation](../media/ex1-travel-g20.png)
+   ![Confirm Publish](../media/image16.png)
 
-   > **Publishing Process:** The agent will be packaged and made available for channel deployment. This process may take a few moments to complete.
+### Step 2: Configure Teams Channel
 
-1. Once published successfully, navigate to the **Channels** section to configure deployment channels for your agent.
+1. Select **Channels** from the top navigation bar to access deployment options.
 
-   ![Navigate to Channels](../media/ex1-travel-g21.png)
+   ![Access Channels](../media/image17.png)
 
-1. In the Channels interface, you'll see available deployment options. Select **Microsoft Teams** to deploy your agent to Teams.
+1. Select **Teams and Microsoft 365 Copilot** from the available channel options.
 
-   ![Select Teams Channel](../media/ex1-travel-g22.png)
+   ![Select Teams Channel](../media/image18.png)
 
-   > **Channel Benefits:** Deploying to Microsoft Teams provides users access through their familiar collaboration environment, increasing adoption and usage.
+1. Select **Add channel** to begin the Teams integration process.
 
-1. Configure the Teams channel settings and click **Save** or **Add** to add the Teams channel to your agent.
+   ![Add Channel](../media/image19.png)
 
-   ![Configure Teams Channel](../media/ex1-travel-g23.png)
+1. Click **See agent in Teams** to open the agent in Microsoft Teams for testing and deployment.
 
-1. Review the channel configuration and submit for approval if required by your organization's policies.
+   ![View in Teams](../media/image20.png)
 
-   ![Channel Configuration Review](../media/ex1-travel-g24.png)
+### Step 3: Deploy and Test in Teams
 
-1. Once the channel is configured, click **Open in Teams** or similar option to test the agent deployment in Microsoft Teams.
+1. Microsoft Teams opens with your Safe Travels agent. Select **Add** to add the agent to your Teams environment.
 
-   ![Open in Teams](../media/ex1-travel-g25.png)
+   ![Add to Teams](../media/image21.png)
 
-1. Microsoft Teams will open with your Safe Travels agent available. Click **Add** to add the agent to your Teams environment.
+   ![Confirm Addition](../media/image22.png)
 
-   ![Add Agent to Teams](../media/ex1-travel-g26.png)
+1. Once added, select **Open** to launch the agent in Teams.
 
-1. After adding the agent, click **Open** to start a conversation with your Safe Travels agent in Teams.
+   ![Open Agent](../media/image23.png)
 
-   ![Open Agent Chat](../media/ex1-travel-g27.png)
+1. Test the agent functionality directly within Microsoft Teams to ensure proper deployment.
 
-1. Test the agent functionality within Teams by asking a travel-related question:
+   ![Test in Teams](../media/image24.png)
 
-   ```
-   I need help planning a business trip
-   ```
+1. Return to Copilot Studio and close the Teams and Microsoft 365 Copilot channel configuration window.
 
-   ![Test Agent in Teams](../media/ex1-travel-g28.png)
+   ![Close Configuration](../media/image25.png)
 
-1. Verify that the agent responds appropriately within the Teams environment, maintaining the same functionality as in the Copilot Studio test environment.
+## Notes
 
-   ![Agent Response in Teams](../media/ex1-travel-g29.png)
-
-   > **Integration Success:** The agent should provide consistent responses regardless of the access channel (Copilot Studio or Teams).
-
-1. Continue testing various travel scenarios to ensure full functionality in the Teams environment.
-
-   ![Additional Teams Testing](../media/ex1-travel-g30.png)
-
-1. Navigate back to Copilot Studio to review the agent deployment status and confirm successful channel configuration.
-
-   ![Review Deployment Status](../media/ex1-travel-g31.png)
-
-1. Verify that the Teams channel is active and the agent is successfully deployed.
-
-   ![Deployment Verification](../media/ex1-travel-g32.png)
-
-1. Review the agent analytics and usage metrics to understand how the agent is performing.
-
-   ![Agent Analytics](../media/ex1-travel-g33.png)
-
-1. Check the agent's conversation history and performance metrics to ensure optimal functionality.
-
-   ![Performance Metrics](../media/ex1-travel-g34.png)
-
-1. Validate that all agent features are working correctly across both Copilot Studio and Teams platforms.
-
-   ![Feature Validation](../media/ex1-travel-g35.png)
-
-1. Review the final agent configuration to ensure all settings are optimized for your organization's needs.
-
-   ![Final Configuration Review](../media/ex1-travel-g36.png)
-
-1. Confirm that the agent is ready for enterprise deployment and user access.
-
-   ![Enterprise Readiness](../media/ex1-travel-g37.png)
-
-1. Document the successful deployment and provide access instructions for end users.
-
-   ![Deployment Documentation](../media/ex1-travel-g38.png)
-
-1. Monitor the agent's initial performance and gather user feedback for potential improvements.
-
-   ![Performance Monitoring](../media/ex1-travel-g39.png)
-
-1. Complete the deployment process by confirming all systems are operational and the agent is accessible to intended users.
-
-   ![Deployment Complete](../media/ex1-travel-g40.png)
-
-   > **Deployment Success:** Your Safe Travels agent is now successfully published and available through Microsoft Teams for your organization's use.
+- **Agent Templates** provide pre-configured starting points with built-in knowledge and conversation flows
+- **Knowledge Sources** can be customized with company-specific documents, policies, and information
+- **Teams Integration** makes agents accessible across the Microsoft 365 ecosystem
+- **Testing** is crucial before deployment to ensure agent responses meet business requirements
+- **Environment Management** ensures proper isolation and governance for enterprise deployments
 
 ## Summary
 
-Excellent work! In just 30 minutes, you've successfully:
+In this exercise, you successfully created your first AI agent using Microsoft Copilot Studio's Safe Travels template. You learned how to set up the Copilot Studio environment, customize agents with company-specific knowledge sources, and deploy agents to Microsoft Teams for enterprise use.
 
-- Set up a Power Platform environment for agent development
-- Created a working Safe Travels agent using Microsoft's template
-- Tested the agent's travel assistance capabilities with real queries
-- Published and deployed the agent to Microsoft Teams for your organization
+Key accomplishments include:
+- Created a functional Safe Travels agent from Microsoft's pre-built template
+- Enhanced the agent with custom knowledge sources (Travel Policy document)
+- Successfully tested agent capabilities and conversational responses
+- Published and deployed the agent to Microsoft Teams for organization-wide access
+- Established foundation skills for AI agent development and enterprise deployment
 
-Your Safe Travels agent is now live and ready to help employees with travel questions, passport information, and destination guidance. You've experienced the power of low-code AI development - creating enterprise-ready conversational agents without any programming.
-
-**What's Next:** In Exercise 2, you'll enhance your agent with custom business processes and explore multi-agent orchestration capabilities.
-
-### You have successfully completed Exercise 1. Click **Next >>** to continue to Exercise 2.
+You now have a working travel assistant agent that employees can use to get travel information, policy guidance, and assistance with travel-related questions. This agent serves as the foundation for the advanced multi-agent orchestration capabilities you'll explore in Exercise 2.
