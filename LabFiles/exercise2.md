@@ -436,14 +436,6 @@ In this task, you'll add a basic business process to your Safe Travels agent by 
 
    > **Multi-Agent Success:** This demonstrates how your Safe Travels agent can now handle both travel-related queries and leave management requests through intelligent agent orchestration.
 
-## Notes
-
-- **Agent Flows** enable business process automation by connecting conversational AI to enterprise workflows and external systems
-- **Multi-Agent Orchestration** allows specialized agents to collaborate automatically, providing comprehensive business solutions
-- **Teams Integration** ensures seamless collaboration between AI agents and human workers in familiar enterprise environments
-- **Knowledge Sources** can be customized for each agent to provide specialized domain expertise
-- **Conversation Context** is maintained across agent boundaries, ensuring smooth user experiences
-- **Enterprise Deployment** through Microsoft 365 enables organization-wide access with proper security and governance
 
 ## Summary
 
@@ -456,11 +448,3 @@ Key accomplishments include:
 - Implemented multi-agent orchestration where agents work together seamlessly
 - Established cross-agent communication and context preservation
 - Deployed an integrated multi-agent system to Microsoft Teams for enterprise use
-
-**Business Value Delivered:**
-- **Automated Travel Approvals:** Employees can request travel approval through natural conversation, with requests automatically posted to appropriate Teams channels
-- **Comprehensive Employee Assistance:** Single conversational interface handles both travel planning and leave management inquiries
-- **Streamlined Business Processes:** Reduced manual overhead for travel approval workflows and leave balance inquiries
-- **Scalable AI Architecture:** Multi-agent design allows for easy addition of new specialized agents and business functions
-
-You now have a sophisticated multi-agent AI system that demonstrates the power of collaborative artificial intelligence for enterprise business processes. Your Safe Travels agent can handle complex scenarios that span multiple business domains, showcasing the future of enterprise AI assistance.
