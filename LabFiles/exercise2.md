@@ -4,16 +4,16 @@
 
 ## Overview
 
-In this exercise, you'll add business process automation to your Safe Travels agent and experience multi-agent orchestration. You'll create a simple Agent Flow for travel approvals and then add a second agent that specializes in leave management. This demonstrates how agents can work together and how businesses can automate processes using conversational AI.
+In this exercise, you'll enhance your Safe Travels agent with business process automation and experience multi-agent orchestration capabilities. You'll create a comprehensive travel approval workflow that integrates with Microsoft Teams and build a specialized Leave Manager agent that works seamlessly with your existing travel assistant.
 
-This is where the magic happens - you'll see your agents come alive with real business functionality. By the end, you'll have a travel approval system that posts requests to Teams, plus a multi-agent setup where your Safe Travels agent can automatically hand off leave-related questions to a specialized Leave Manager agent.
+This exercise demonstrates the power of conversational AI in real business scenarios. You'll see how agents can trigger actual business processes, collaborate with each other, and provide end-to-end automation solutions. By the end, you'll have a sophisticated multi-agent system where your Safe Travels agent can automatically route leave-related queries to a specialized Leave Manager agent while handling travel approvals through automated Teams notifications.
 
 ## Objectives
 
 You will be able to complete the following tasks:
 
-- Task 1: Create a simple travel approval flow (15 mins)
-- Task 2: Build a Leave Manager agent and set up multi-agent orchestration (15 mins)
+- Task 1: Create and configure travel approval flow with Teams integration
+- Task 2: Build Leave Manager agent and establish multi-agent orchestration
 
 ## Prerequisites
 
@@ -22,73 +22,76 @@ You will be able to complete the following tasks:
 - Understanding of basic workflow concepts and business process automation
 - **Safe Travels agent** available in your Copilot Studio environment
 
-## Task 1: Create Simple Travel Approval Flow (15 minutes)
+## Task 1: Create and Configure Travel Approval Flow with Teams Integration
 
-In this task, you'll add a basic business process to your Safe Travels agent by creating a simple flow that can capture travel approval requests. This demonstrates how agents can trigger real business processes.
+In this task, you will build a comprehensive travel approval workflow that integrates your Safe Travels agent with Microsoft Teams. This demonstrates how conversational AI can trigger real business processes, route requests to appropriate teams, and provide automated notifications. You'll create a complete end-to-end workflow that captures travel approval requests and posts them directly to designated Teams channels for manager review.
 
-### Step 1: Quick Teams Setup (3 minutes)
-
-1. Go to the **Chat (1)** section, click the **New (2)** dropdown, and select **New team (3)**.
+1. Navigate to **Microsoft Teams** and go to the **Chat (1)** section, click the **New (2)** dropdown, and select **New team (3)** to create a dedicated workspace for travel approvals.
 
    ![Open Teams](../media/ex2-travel-g1.png)
 
-1. Enter **HR Team (1)** as the Team name, type **Travel Approvals (2)** for the first channel, then select **Create (3)**.
+   >**Teams Integration Foundation:** Creating a dedicated team and channel structure ensures that travel approval requests are organized and routed to the appropriate stakeholders for review and processing.
+
+1. Configure your new team with the following details:
+   - **Team name:** Enter **HR Team (1)** 
+   - **First channel:** Type **Travel Approvals (2)** 
+   - Click **Create (3)** to establish the team structure.
 
    ![Create Team](../media/ex2-travel-g2.png)
 
-1. In the **Add members to HR Team** window, select **Skip** to continue without adding members.
+1. In the **Add members to HR Team** window, select **Skip** to continue without adding members for this demonstration.
 
    ![Team Details](../media/ex2-travel-g3.png)
 
-1. Go to the **Flows (1)** section and click **New agent flow (2)** to create a new flow.
+1. Navigate to **Power Automate** by going to the **Flows (1)** section and click **New agent flow (2)** to create a new automated workflow.
 
    ![Skip Members](../media/ex2-travel-g4.png)
 
-1. Under **AI capabilities**, select **When an agent calls the flow** as the trigger.
+1. Under **AI capabilities**, select **When an agent calls the flow** as the trigger mechanism to enable agent-initiated workflows.
 
    ![Team Created](../media/ex2-travel-g5.png)
 
-   > **Quick Setup:** We're keeping this simple - just one team and channel for approval notifications.
+   > **Workflow Foundation:** This trigger allows your agent to initiate business processes automatically based on user conversations, creating seamless integration between conversational AI and business operations.
 
-1. Click **Add an input** under the trigger node to define input parameters for the flow.
+1. Click **Add an input** under the trigger node to define the data parameters that your agent will pass to the workflow.
 
    ![Navigate to Flows](../media/ex2-travel-g6.png)
 
-1. Choose **Number** as the type of user input for the flow parameter.
+1. Choose **Number** as the data type for the first input parameter to capture employee identification.
 
    ![New Agent Flow](../media/ex2-travel-g7.png)
 
-1. Name the input as **Employee ID (1)**, then click **Add an input (2)** to create another parameter.
+1. Configure the first input parameter:
+   - **Name:** Enter **Employee ID (1)**
+   - Click **Add an input (2)** to create the second parameter.
 
    ![Add Trigger](../media/ex2-travel-g8.png)
 
-1. Select **Text** as the type of user input for the next parameter.
+1. Select **Text** as the data type for the second input parameter to capture travel details.
 
    ![Select Trigger](../media/ex2-travel-g9.png)
 
-1. Name the second input as **Purpose** to capture the reason for travel.
+1. Configure the second input parameter by naming it **Purpose** to capture the business reason for travel requests.
 
    ![Add Input](../media/ex2-travel-g10.png)
 
-1. Click the **Add (1)** icon below the trigger node to insert a new action in the flow.
+1. Click the **Add (1)** icon below the trigger node to insert a new action step in the workflow automation.
 
    ![Employee ID Input](../media/ex2-travel-g11.png)
 
-1. In the search box, type **Post message in a chat or channel (1)** and **select (2)** it under Microsoft Teams.
+1. Search for Microsoft Teams integration by typing **Post message in a chat or channel (1)** and **select (2)** it from the available Microsoft Teams actions.
 
    ![Add Second Input](../media/ex2-travel-g12.png)
 
-1. Select **Sign in** to create a new connection to Microsoft Teams.
+1. Establish the Microsoft Teams connection by selecting **Sign in** to authenticate and authorize the workflow integration.
 
    ![Purpose Input](../media/ex2-travel-g13.png)
 
-### Step 3: Add Teams Integration (5 minutes)
-
-1. Choose your **ODL_User (1)** account to sign in and connect to Microsoft Teams.
+1. Choose your **ODL_User (1)** account credentials to authenticate and establish the Microsoft Teams connection.
 
    ![Add Action](../media/ex2-travel-g14.png)
 
-1. Configure the action as follows:  
+1. Configure the Teams message posting action with the following parameters:  
    - **Post as (1):** Flow bot  
    - **Post in (2):** Channel  
    - **Team (3):** HR Team  
@@ -96,6 +99,8 @@ In this task, you'll add a basic business process to your Safe Travels agent by 
    - **Message (5):** `Travel request from Employee ID: [Employee ID], Purpose: [Purpose]`
 
    ![Search Teams](../media/ex2-travel-g15.png)
+
+   > **Teams Integration Benefits:** This configuration ensures that travel approval requests are automatically posted to the designated HR team channel, creating a centralized approval workflow with proper audit trails.
 
 1. Highlight **[Employee ID] (1)** in the message box and click the **Dynamic content (2)** icon to insert the Employee ID variable.
 
@@ -282,43 +287,55 @@ In this task, you'll add a basic business process to your Safe Travels agent by 
 
    ![](../media/ex2-travel-g65.png)
 
-1. Type **Check my leave balance (1)** and click **Send (2)**.
+   > **Flow Validation:** Successfully testing the travel approval flow confirms that your agent can trigger real business processes and integrate with enterprise collaboration tools.
+
+## Task 2: Build Leave Manager Agent and Establish Multi-Agent Orchestration
+
+In this task, you will create a specialized Leave Manager agent and configure multi-agent orchestration to demonstrate how different AI agents can work together seamlessly. This showcases the power of distributed AI systems where specialized agents handle specific business domains while maintaining a unified user experience through intelligent routing and collaboration.
+
+1. Test the current limitation by typing **Check my leave balance (1)** and click **Send (2)** in your Safe Travels agent.
 
    ![](../media/ex2-travel-g66.png)
 
-1. Verify the agent’s response displays a message indicating that no leave balance information is available. 
+1. Observe that the agent's response displays a message indicating that no leave balance information is available, demonstrating the need for a specialized agent.
 
    ![](../media/ex2-travel-g67.png)
 
-1. In Copilot Studio, click **Agents (1)** and then select **+ New agent (2)**.  
+   > **Agent Specialization:** This limitation demonstrates why multi-agent orchestration is valuable - different agents can specialize in specific business domains while working together seamlessly.
+
+1. Navigate to **Copilot Studio**, click **Agents (1)** and then select **+ New agent (2)** to create the specialized Leave Manager agent.
 
    ![](../media/ex2-travel-g68.png)
 
-1. Enter the following details to configure your agent:  
+1. Configure your Leave Manager agent with the following specifications:  
    - **Name (1):** Leave Manager Agent  
    - **Description (2):** Helps employees check leave balances and policies  
    - **Instructions (3):** Track employee leaves and provide leave balance information  
-   - Click **Create (4)**.  
+   - Click **Create (4)** to generate the specialized agent.
 
    ![](../media/ex2-travel-g69.png)
 
-1. Go to the **Overview (1)** tab and click **Add knowledge (2)** to include data or files that enhance your agent’s responses.  
+   > **Agent Specialization:** Creating domain-specific agents allows for better accuracy, focused training, and more relevant responses for specific business functions.
+
+1. Navigate to the **Overview (1)** tab and click **Add knowledge (2)** to include organizational data sources that will enhance your agent's leave management capabilities.
 
    ![](../media/ex2-travel-g70.png)
 
-1. Click **select to browse** and upload the required document to add it as a knowledge source for your agent.  
+1. Click **select to browse** to upload the leave management documentation that will serve as the knowledge foundation for your agent.
 
    ![](../media/ex2-travel-g71.png)
 
-1. Upload the required files and click **Add to agent** to include them as knowledge sources for your agent.  
+1. Upload the required leave policy and tracking files, then click **Add to agent** to integrate them as authoritative knowledge sources.
 
    ![](../media/ex2-travel-g72.png)
 
-1. Verify that the uploaded knowledge files show the **Ready** status, confirming they are successfully added to the agent.  
+1. Verify that all uploaded knowledge sources display **Ready** status, confirming successful integration and availability for agent responses.
 
    ![](../media/ex2-travel-g73.png)
 
    ![](../media/ex2-travel-g74.png)
+
+   > **Knowledge Integration:** Successfully uploaded knowledge sources enable your agent to provide accurate, policy-compliant responses based on your organization's actual leave management data.
 
 1. From the **menu**, select **Topics** to create or manage conversation topics for your agent.  
 
@@ -428,23 +445,19 @@ In this task, you'll add a basic business process to your Safe Travels agent by 
 
    ![](../media/ex2-travel-g85.png)
 
-1. Type **1234 is my Employee ID can you check my Leave balance (1)** and click **send (2)**.
+1. Type **1234 is my Employee ID can you check my Leave balance (1)** and click **send (2)** to validate the multi-agent orchestration functionality.
 
    ![](../media/ex2-travel-g86.png)
 
-1. Observe how the Safe Travels agent now seamlessly delegates the leave balance query to the specialized Leave Manager agent, demonstrating successful multi-agent orchestration. The response should show the leave balance information retrieved from the Leave Manager agent's knowledge source.
-
-   > **Multi-Agent Success:** This demonstrates how your Safe Travels agent can now handle both travel-related queries and leave management requests through intelligent agent orchestration.
-
+   > **Multi-Agent Success:** The seamless handoff between your Safe Travels agent and Leave Manager agent demonstrates successful orchestration, where specialized agents collaborate to provide comprehensive business solutions.
 
 ## Summary
 
-In this exercise, you successfully implemented advanced business process automation and multi-agent orchestration capabilities in Microsoft Copilot Studio. You transformed a basic travel assistant into a sophisticated AI system that can automate approval workflows and collaborate with specialized agents.
+Excellent work! In this exercise, you successfully enhanced your conversational AI system with advanced business automation capabilities. You have accomplished:
 
-Key accomplishments include:
-- Created a comprehensive travel approval workflow that integrates with Microsoft Teams
-- Built Agent Flows that capture user input and trigger automated business processes
-- Developed a specialized Leave Manager agent with custom knowledge sources
-- Implemented multi-agent orchestration where agents work together seamlessly
-- Established cross-agent communication and context preservation
-- Deployed an integrated multi-agent system to Microsoft Teams for enterprise use
+- **Created comprehensive travel approval workflows** that integrate with Microsoft Teams for real-time business process automation
+- **Built a specialized Leave Manager agent** with organizational knowledge sources and domain-specific expertise
+- **Established multi-agent orchestration** enabling seamless collaboration between different AI agents
+- **Implemented end-to-end business processes** from conversation initiation to Teams notification and cross-agent routing
+
+### You have successfully completed the Lab!
